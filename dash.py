@@ -15,24 +15,12 @@ import pandas as pd
 
 #%%
 
-
-# Tema customizado
-theme = {
-    "primaryColor": "#0B3954",           # cor principal (botões, seletores)
-    "backgroundColor": "#FFFFFF",        # fundo branco da página
-    "secondaryBackgroundColor": "#F0F2F6", # fundo de widgets / sidebar
-    "textColor": "#000000",              # texto preto
-    "font": "sans serif"
-}
-
 st.set_page_config(
     page_title="Flash Droughts in Brazil",
     layout="wide",
     initial_sidebar_state="expanded"
 )
 
-# Aplica o tema
-st.set_theme(theme=theme)
 
 # Estilo CSS personalizado
 st.markdown("""
