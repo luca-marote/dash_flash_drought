@@ -162,7 +162,7 @@ elif pagina == "🧪 Method":
         
     st.markdown("<br><br>", unsafe_allow_html=True)
         
-    st.image(r"C:\Users\User\arquivos_dashboard\methods.png")
+    st.image("images/methods.png")
 
 
 #--------------------------------------------------------------------------------------------------------------------
@@ -521,4 +521,5 @@ elif pagina == "🌡️ Drought Analysis":
             st.image(r"C:\Users\User\arquivos_dashboard\FD_Brazil.png")
                         
         
+
     
