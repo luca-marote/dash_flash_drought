@@ -501,11 +501,12 @@ elif pagina == "📈 Publication Trends":
         
         
     with tab5:
-        with open(r"C:\Users\User\arquivos_dashboard\index.html", "r", encoding="utf-8") as f:
-            html_data2 = f.read()
+        link_url = "https://review-fd-map.netlify.app/"
+        st.markdown(f"[{link_url}]({link_url})")
         st.subheader("Distribution of peer-reviewed studies")
         st.components.v1.html(html_data2, height=700, scrolling=True)         
-            
+
+
 
 # Flash Drought Analysis
 elif pagina == "🌡️ Drought Analysis":
@@ -523,3 +524,4 @@ elif pagina == "🌡️ Drought Analysis":
         
 
     
+
