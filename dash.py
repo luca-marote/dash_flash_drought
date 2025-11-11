@@ -502,9 +502,18 @@ elif pagina == "📈 Publication Trends":
         
     with tab5:
         link_url = "https://review-fd-map.netlify.app/"
-        st.markdown(f"[{link_url}]({link_url})")
-        st.subheader("Distribution of peer-reviewed studies")
-        st.components.v1.html(html_data2, height=700, scrolling=True)         
+        st.markdown(f"**Acesse o mapa diretamente:** [{link_url}]({link_url})") 
+        st.subheader("Distribution of peer-reviewed studies (Mapa Interativo)")
+        iframe_html = f'''
+        <iframe 
+            src="{link_url}" 
+            width="100%" 
+            height="700" 
+            style="border:none;"
+            allowfullscreen="true">
+        </iframe>'''
+        
+        st.markdown(iframe_html, unsafe_allow_html=True)
 
 
 
@@ -524,4 +533,5 @@ elif pagina == "🌡️ Drought Analysis":
         
 
     
+
 
