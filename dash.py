@@ -528,11 +528,12 @@ elif pagina == "🌡️ Drought Analysis":
         
         with col1:
             st.subheader("Geographical distribution events in Brazil")
-            st.image(r"C:\Users\User\arquivos_dashboard\FD_Brazil.png")
+            st.image("images/FD_Brazil.png")
                         
         
 
     
+
 
 
 
