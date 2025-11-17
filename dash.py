@@ -561,7 +561,7 @@ elif selected =="Drought Analysis":
     tab1, tab2 = st.tabs(["Brazil", "Global"])
      
     with tab2:
-         import gdown
+        import gdown
 
         id = "1AbCDefGhijkLmNOPQRstuVWxyz12345"
         url = f"https://drive.google.com/uc?id={id}"
@@ -710,6 +710,7 @@ elif selected == "Thematic Trends":
     
 
     
+
 
 
 
