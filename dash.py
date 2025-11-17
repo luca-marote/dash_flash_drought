@@ -562,7 +562,7 @@ elif selected =="Drought Analysis":
      
     with tab2:
         
-        gdf = gpd.read_file(gdf_drought_analysis_2.gpkg)
+        gdf = gpd.read_file('gdf_drought_analysis_2.gpkg')
         
         st.header("🌵 Interactive map of drought distribution")
 
@@ -704,6 +704,7 @@ elif selected == "Thematic Trends":
     
 
     
+
 
 
 
