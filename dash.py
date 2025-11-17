@@ -561,15 +561,10 @@ elif selected =="Drought Analysis":
     tab1, tab2 = st.tabs(["Brazil", "Global"])
      
     with tab2:
-        import gdown
-
-        id = "1AbCDefGhijkLmNOPQRstuVWxyz12345"
-        url = f"https://drive.google.com/uc?id={id}"
-
-        gdown.download(url, "arquivo.gpkg", quiet=False)
-
-        gdf = gpd.read_file("arquivo.gpkg")
-
+        
+        url = "https://github.com/luca-marote/dash_flash_drought/releases/download/v1.0/gdf_drought_analysis.gpkg"
+        gdf = gpd.read_file(url)
+        
         st.header("🌵 Interactive map of drought distribution")
 
     # --- Filtros ---
@@ -710,6 +705,7 @@ elif selected == "Thematic Trends":
     
 
     
+
 
 
 
