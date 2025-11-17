@@ -7,10 +7,15 @@ Created on Tue Jul 29 11:25:00 2025
 
 import streamlit as st
 import streamlit.components.v1 as components
+from streamlit_option_menu import option_menu
 import plotly.graph_objects as go
 from plotly.subplots import make_subplots
 import numpy as np
 import pandas as pd
+from streamlit_folium import st_folium
+import folium
+import geopandas as gpd
+from shapely.geometry import Point, Polygon, MultiPolygon
 
 
 #%%
@@ -19,7 +24,7 @@ import pandas as pd
 st.set_page_config(
     page_title="Flash Droughts in Brazil",
     layout="wide",
-    initial_sidebar_state="expanded"
+
 )
 
 
@@ -34,7 +39,7 @@ st.markdown("""
             font-size: 40px;
             font-weight: 700;
             text-align: center;
-            color: #f5a253;
+            color: #382626;
             margin-bottom: 20px;
         }
         .subtitle {
@@ -46,7 +51,7 @@ st.markdown("""
         .authors {
             font-size: 20px;
             text-align: center;
-            color: #08a2fc;
+            color: #382626;
         }
         .keypoints {
             font-size: 18px;
@@ -54,7 +59,7 @@ st.markdown("""
             margin-left: 30px;
         }
         .legend {
-        font-size: 22px;
+        font-size: 16px;
         margin-top: 20px;
         text-align: center;
         margin-left: 30px;
@@ -77,13 +82,33 @@ st.markdown("""
 
 
 # Sidebar com menu
-pagina = st.sidebar.radio("📂 Browse:", ["📘 Cover",
-                                        "🧪 Method",
-                                        "📈 Publication Trends",
-                                        "🌡️ Drought Analysis",
-                                        "🧠 Scientific Gaps",
-                                        "📊 Thematic trends"])
 
+with st.sidebar:
+    selected = option_menu(
+        menu_title="Browse:",
+        options=["Home", "Method", "Publication Trends", "Interactive Map", "Drought Analysis", "Scientific Gaps", "Thematic Trends"],
+        icons=["house", "card-text","bar-chart", "map", "thermometer-sun", "puzzle", "graph-up"],
+        menu_icon="cast",
+        default_index=0,
+        styles={
+            "container": {"background-color": "#382626"},
+            "menu-title": {
+                "font-size": "22px",
+                "font-family": "Arial, sans-serif",
+                "color": "white",
+                "font-weight": "bold",
+                "text-align": "center"
+            },
+            "icon": {"color": "white", "font-size": "18px"},
+            "nav-link": {
+                "font-size": "15px",
+                "color": "white",
+                "margin": "0px",
+                "padding": "10px 20px"
+                },
+            "nav-link-selected": {"background-color": "white", "color": "black"},
+          }
+    )
 
 
 #--------------------------------------------------------------------------------------------------------------------
@@ -91,12 +116,13 @@ pagina = st.sidebar.radio("📂 Browse:", ["📘 Cover",
 #--------------------------------------------------------------------------------------------------------------------
 
 
-if pagina == "📘 Cover":
-    col1, col2 = st.columns(2)
-    with col1:
-        st.markdown('<div class="title">Uncovering Flash Droughts in Brazil through Global and Regional Perspectives: A Systematic Literature Review </div>', unsafe_allow_html=True)
+if selected == "Home":
+
+
+    st.markdown(
+    '<div class="title">Uncovering Flash Droughts in Brazil through Global and Regional Perspectives: A Systematic Literature Review </div>', unsafe_allow_html=True)
     
-        st.markdown('<div class="authors"> P. C. M. Vasconcelos<sup>a</sup>,\
+    st.markdown('<div class="authors"> P. C. M. Vasconcelos<sup>a</sup>,\
                 L. C. D. Marote<sup>a</sup>, \
                 G. A. J. Bimbatti<sup>a</sup>,\
                 G. C. Gesualdo<sup>b</sup>, \
@@ -134,14 +160,14 @@ if pagina == "📘 Cover":
     </div>
     """, unsafe_allow_html=True)
     
-    st.markdown("<br><br> ", unsafe_allow_html=True)
+
     
     
     #FIGURE 1
     st.markdown('<div class="legend"> Comparison between slow-onset (a) and flash (b) droughts highlighting their key characteristics.\
                 On the y-axis, SM is soil moisture, P is precipitation, and ET is evapotranspiration.', unsafe_allow_html=True) 
     
-    st.image("images/Sudden decline in soil moisture in a few days.png")
+    st.image(r"C:\Users\User\arquivos_dashboard\images\figure1.png")
         
     
     
@@ -150,7 +176,9 @@ if pagina == "📘 Cover":
 #--------------------------------------------------------------------------------------------------------------------
 
 
-elif pagina == "🧪 Method":
+
+elif selected == "Method":
+    
     st.header("🧪 Methodology")  # anchor removido
     
     st.markdown("<br> ", unsafe_allow_html=True)
@@ -162,7 +190,7 @@ elif pagina == "🧪 Method":
         
     st.markdown("<br><br>", unsafe_allow_html=True)
         
-    st.image("images/methods.png")
+    st.image(r"C:\Users\User\arquivos_dashboard\images\methods.png")
 
 
 #--------------------------------------------------------------------------------------------------------------------
@@ -170,16 +198,21 @@ elif pagina == "🧪 Method":
 #--------------------------------------------------------------------------------------------------------------------
 
 
-elif pagina == "📈 Publication Trends":
+elif selected == "Publication Trends":
+    
     st.header("📈 Publication Trends")  # anchor removido
     # Criar abas
-    tab1, tab2, tab3, tab4, tab5 = st.tabs(["📈 Papers per Year", "📚 Journals/Authors", "🌎 Countries", "🧩 Study Area Scales", "🗺️ Interactive distribution of studies" ])
+    tab1, tab2, tab3, tab4 = st.tabs(["📈 Papers per Year", 
+                                            "📚 Journals/Authors", 
+                                            "🌎 Countries", 
+                                            "🧩 Study Area Scales", 
+                                           ])
 
 #--------------------------------------------------------------------------------------------------------------------
 
 
     with tab1:
-        st.subheader("Interactive — Publications overview")
+        st.subheader("Publications overview")
     # -------------------------------
     # Figura 1
     # -------------------------------
@@ -228,7 +261,7 @@ elif pagina == "📈 Publication Trends":
             title=dict(text="Annual number of articles published per year", font=dict(size=22), x=0.30),
             height=750,
             template="simple_white",
-            font=dict(family="Liberation Serif", size=18),
+            font=dict(family="Source Sans", size=18),
             margin=dict(l=80, r=40, t=80, b=60),
             legend=dict(orientation="v", y=1, x=0.01, font=dict(size=18))
             )
@@ -301,7 +334,7 @@ elif pagina == "📈 Publication Trends":
             height=750,
             barmode='group',
             template="simple_white",
-            font=dict(family="Liberation Serif", size=18),
+            font=dict(family="Source Sans", size=18),
             xaxis=dict(
                 tickmode='array',
                 tickvals=x,
@@ -343,7 +376,7 @@ elif pagina == "📈 Publication Trends":
 #--------------------------------------------------------------------------------------------------------------------
 
     with tab2:
-        st.subheader("Interactive — Journals overview")
+        st.subheader("Journals overview")
 
         journals = [
                 "Journal of Hydrometeorology", "Environmental Research Letters",
@@ -373,22 +406,21 @@ elif pagina == "📈 Publication Trends":
         fig_journals.update_layout(
                 title=dict(text="Top journals by number of publications", font=dict(size=22), x=0.35),
                 title_font=dict(size=22),
-                height=750,
+                height=650,
                 template="simple_white",
-                font=dict(family="Liberation Serif", size=14),
+                font=dict(family="Source Sans", size=14),
                 margin=dict(l=150, r=40, t=80, b=60)
                 )
         
-        fig_journals.update_xaxes(title="Number of Publications", title_font=dict(size=22), tickfont=dict(size=18))
-        fig_journals.update_yaxes(title_text="Journals",title_font=dict(size=22), tickfont=dict(size=20))
+        fig_journals.update_xaxes(title="Number of Publications", title_font=dict(size=20), tickfont=dict(size=18))
+        fig_journals.update_yaxes(title_text="Journals",title_font=dict(size=20), tickfont=dict(size=18))
         
         st.plotly_chart(fig_journals, use_container_width=True)
 
-
-
-
+                
+        
     with tab3:
-        st.subheader("Interactive — Countries publications overview")
+        st.subheader("Countries publications overview")
 
         countries = ["U.S.", "Brazil", "China", "Spain", "India"]
         perc = np.array([36.9, 26.1, 20.0, 3.3, 3.3])
@@ -420,10 +452,10 @@ elif pagina == "📈 Publication Trends":
            )
 
         fig_b.update_layout(
-            title=dict(text="Countries with the highest number of publications", font=dict(size=22), x=0.35),
-            height=750,
+            title=dict(text="Countries with the highest number of publications", font=dict(size=22), x=0.25),
+            height=650,
             template="simple_white",
-            font=dict(family="Liberation Serif", size=18),
+            font=dict(family="Source Sans", size=18),
             margin=dict(l=100, r=40, t=80, b=60)
             )
         
@@ -436,7 +468,7 @@ elif pagina == "📈 Publication Trends":
     
    
     with tab4:
-        st.subheader("Interactive — Study area overview")
+        st.subheader("Study area overview")
         
         
         overall = {"Regional": 32.6, "National": 27.2, "Local": 5.4, "Global": 30.4, "Continental": 4.3}
@@ -499,12 +531,18 @@ elif pagina == "📈 Publication Trends":
         
         st.plotly_chart(fig_d, use_container_width=True)
         
-        
-    with tab5:
-        link_url = "https://review-fd-map.netlify.app/"
-        st.markdown(f"**Acesse o mapa diretamente:** [{link_url}]({link_url})") 
-        st.subheader("Distribution of peer-reviewed studies (Mapa Interativo)")
-        iframe_html = f'''
+
+
+
+# Flash Drought Analysis
+elif selected =="Interactive Map":
+    link_url = "https://review-fd-map.netlify.app/"
+
+    st.header("Distribution of peer-reviewed studies")
+    
+    st.markdown(f"**Acesse o mapa diretamente:** [{link_url}]({link_url})") 
+    
+    iframe_html = f'''
         <iframe 
             src="{link_url}" 
             width="100%" 
@@ -513,24 +551,156 @@ elif pagina == "📈 Publication Trends":
             allowfullscreen="true">
         </iframe>'''
         
-        st.markdown(iframe_html, unsafe_allow_html=True)
+    st.markdown(iframe_html, unsafe_allow_html=True)
 
 
+elif selected =="Drought Analysis":
 
-# Flash Drought Analysis
-elif pagina == "🌡️ Drought Analysis":
     st.header("🌡️ Drought Analysis")  # anchor removido
     
-    tab1, tab2 = st.tabs(["Brazil", "Geographical distribution and typologies of drought events in Brazil"])
+    tab1, tab2 = st.tabs(["Brazil", "Global"])
+     
+    with tab2:
+        gdf = gpd.read_file(r"C:\Users\User\03-Luca Marote\Artigo_Flash_Drought\gdf_drought_analysis.gpkg")
 
-    with tab1:
-        col1, col2 = st.columns(2)
+        st.header("🌵 Interactive map of drought distribution")
+
+    # --- Filtros ---
+        anos = st.multiselect("Select year:", sorted(gdf['Ano de publicação'].unique()))
+        escalas = st.multiselect("Select scale:", sorted(gdf['Escala de abrangência'].unique()))
         
-        with col1:
-            st.subheader("Geographical distribution events in Brazil")
-            st.image("images/FD_Brazil.png")
-                        
+    # --- Aplicar filtros ---
+        gdf_filtrado = gdf.copy()
+        if anos:
+            gdf_filtrado = gdf_filtrado[gdf_filtrado['Ano de publicação'].isin(anos)]
+        if escalas:
+            gdf_filtrado = gdf_filtrado[gdf_filtrado['Escala de abrangência'].isin(escalas)]
+
+    # --- Criar mapa dinâmico ---
+        m = folium.Map(location=[-14, -52], zoom_start=4, tiles='cartodb positron')
+
+        for _, row in gdf_filtrado.iterrows():
+
+            geom = row.geometry
+
+            popup_html = f"""
+            <b>Study:</b> {row.get('Class', '—')}<br>
+            <b>Scale:</b> {row.get('Escala de abrangência', '—')}<br>
+            <b>Year:</b> {row.get('Ano de publicação', '—')}
+            """
+
+    # -------------------------
+    # Se for ponto → Marker
+    # -------------------------
+            if isinstance(geom, Point):
+                folium.Marker(
+                    location=[geom.y, geom.x],
+                    popup=popup_html,
+                    icon=folium.Icon(color="orange", icon="cloud")
+                ).add_to(m)
+
+    # -------------------------
+    # Se for polígono → GeoJson
+    # -------------------------
+            elif isinstance(geom, (Polygon, MultiPolygon)):
+                folium.GeoJson(
+                    data=geom,
+                    style_function=lambda x: {
+                        "fillColor": "#ff7800",
+                        "color": "#ff7800",
+                        "weight": 1,
+                        "fillOpacity": 0.25,
+                    },
+                    tooltip=popup_html
+                ).add_to(m)
+
+    # --- Exibir mapa no dashboard ---
+        st_folium(m, width=1200, height=600)
+
         
+         
+        
+elif selected == "Scientific Gaps":
+
+    st.header("")  # anchor removido
+
+    # Dados
+    outer_sizes = [71, 21]
+    outer_colors = ['#F4A261', '#BDBDBD']  # laranja e cinza
+
+    inner_sizes = [23, 48, 21]  # 23.0, 48.0, 21
+    inner_colors = ['#2E7D32', '#81C784', 'rgba(0,0,0,0)']  # verde escuro, verde claro e transparente
+
+    # Gráfico externo (anel principal)
+    outer = go.Pie(
+        values=outer_sizes,
+        marker=dict(colors=outer_colors),
+        hole=0.7,              # define o tamanho do "buraco"
+        direction='clockwise',
+        sort=False,
+        textinfo='none',
+        hoverinfo='label+percent',
+        labels=['Address FD', 'Do not address FD']
+    )
+
+    # Gráfico interno (subdivisão do segmento principal)
+    inner = go.Pie(
+        values=inner_sizes,
+        marker=dict(colors=inner_colors),
+        hole=0.4,
+        direction='clockwise',
+        sort=False,
+        textinfo='none',
+        hoverinfo='label+percent',
+        labels=['Generic definition of FD', 'Explicit definition of FD', '']
+    )
+
+# Monta a figura
+    fig = go.Figure(data=[inner, outer])
+
+# Ajustes visuais
+    fig.update_layout(
+        showlegend=True,
+        margin=dict(t=40, b=40, l=40, r=40),
+        width=600,
+        height=600,
+    )
+
+    fig.update_layout(
+    legend=dict(
+        title="Legend",           # Título da legenda
+        orientation="v",              # 'h' = horizontal | 'v' = vertical
+        yanchor="top",             # ancora vertical
+        y=0.1,                       # posição vertical (negativo = abaixo do gráfico)
+        xanchor="center",             # ancora horizontal
+        x=0.5,                        # posição horizontal (0 = esquerda, 1 = direita)
+        bgcolor="rgba(255,255,255,0.8)",  # cor de fundo com transparência
+        bordercolor="#CCCCCC",        # cor da borda
+        borderwidth=1,                # espessura da borda
+        font=dict(                    # estilo do texto
+            family="Arial",
+            size=14,
+            color="#333333"
+            )
+        )
+    )
+    st.plotly_chart(fig, use_container_width=True)
+
+        
+
+
+elif selected == "Thematic Trends":
+
+    st.header("Word Cloud")
+    st.image(r"C:\Users\User\arquivos_dashboard\images\word_clouds.png")
+
+
+    st.header("Chords Diagram")
+    st.image(r"C:\Users\User\arquivos_dashboard\images\chords_diagram_words_.png")
+                     
+
+                     
+    
 
     
 
