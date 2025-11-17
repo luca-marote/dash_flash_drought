@@ -6,6 +6,8 @@ geopandas
 folium
 streamlit_option_menu
 streamlit_folium
+gdown
+
 
 
 
