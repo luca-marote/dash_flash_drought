@@ -561,7 +561,14 @@ elif selected =="Drought Analysis":
     tab1, tab2 = st.tabs(["Brazil", "Global"])
      
     with tab2:
-        gdf = gpd.read_file(r"C:\Users\User\03-Luca Marote\Artigo_Flash_Drought\gdf_drought_analysis.gpkg")
+         import gdown
+
+        id = "1AbCDefGhijkLmNOPQRstuVWxyz12345"
+        url = f"https://drive.google.com/uc?id={id}"
+
+        gdown.download(url, "arquivo.gpkg", quiet=False)
+
+        gdf = gpd.read_file("arquivo.gpkg")
 
         st.header("🌵 Interactive map of drought distribution")
 
@@ -703,6 +710,7 @@ elif selected == "Thematic Trends":
     
 
     
+
 
 
 
