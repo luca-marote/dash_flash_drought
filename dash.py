@@ -562,8 +562,7 @@ elif selected =="Drought Analysis":
      
     with tab2:
         
-        url = "https://github.com/luca-marote/dash_flash_drought/releases/download/v1.0/gdf_drought_analysis.gpkg"
-        gdf = gpd.read_file(url)
+        gdf = gpd.read_file(gdf_drought_analysis_2.gpkg)
         
         st.header("🌵 Interactive map of drought distribution")
 
@@ -705,6 +704,7 @@ elif selected == "Thematic Trends":
     
 
     
+
 
 
 
