@@ -5,3 +5,6 @@ plotly
 geopandas
 folium
 streamlit_option_menu
+streamlit_folium
+shapely.geometry
+
