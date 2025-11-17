@@ -2,4 +2,6 @@ streamlit
 pandas
 numpy
 plotly
+geopandas
 folium
+streamlit_option_menu
