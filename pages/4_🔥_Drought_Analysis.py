@@ -79,7 +79,7 @@ with tab2:
                     "color": get_color(cls),
                     "weight": 1,
                     "fillOpacity": 0.25,
-                }
+                },
                 tooltip=popup_html
             ).add_to(m)
 
