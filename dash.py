@@ -15,28 +15,32 @@ st.set_page_config(
 
 st.markdown("""
     <style>
-        /* Aumenta o tamanho da fonte para todos os links de navegação (que incluem os ícones/emojis) */
-        /* Seletores usados pelo Streamlit para os links de navegação na sidebar nativa */
-        .st-emotion-cache-1ae80r8 div a {
-            font-size: 20px; /* Altere este valor para o tamanho desejado (ex: 20px, 24px) */
-            color: white; /* Mantém o texto/ícone branco, supondo um fundo escuro */
-            padding: 10px 20px;
-        }
-
-        /* Seletor específico para o texto do link na sidebar (dependente da versão do Streamlit) */
-        [data-testid="stSidebarNavItems"] li a {
-            font-size: 20px;
+        /* Aumenta a fonte de TODOS os links de navegação da sidebar */
+        a[data-testid*="stSidebarNavItem"] {
+            font-size: 22px !important; /* Tamanho da fonte dos links e ícones */
+            color: white !important; /* Mantém o texto/ícone branco, se o fundo for escuro */
+            padding: 12px 20px !important; /* Adiciona um padding maior */
         }
         
         /* Aumenta o tamanho da fonte da página selecionada (ativa) */
-        .st-emotion-cache-1ae80r8 div a[aria-current="page"] {
-            font-size: 20px; /* Garante que a página ativa também tenha o mesmo tamanho */
-            /* Se você quiser o fundo branco para a página ativa, adicione: */
+        /* Garante que o item ativo também tenha o tamanho maior */
+        a[data-testid*="stSidebarNavItem"][aria-current="page"] {
+            font-size: 22px !important;
+            /* Se quiser replicar o estilo de seleção: */
             /* background-color: white !important; */
             /* color: black !important; */
         }
+        
+        /* Aumenta a fonte do título "Browse:" (se você o recriou com markdown) */
+        /* Altere o seletor H3 se você usou outro nível de cabeçalho ou div */
+        [data-testid="stSidebar"] h3 {
+             font-size: 24px !important;
+             color: white !important;
+        }
+        
     </style>
 """, unsafe_allow_html=True)
+
 
 # Estilo CSS personalizado
 st.markdown("""
@@ -127,6 +131,7 @@ st.markdown('<div class="legend"> Comparison between slow-onset (a) and flash (b
 st.image("images/Sudden decline in soil moisture in a few days.png")
         
     
+
 
 
 
