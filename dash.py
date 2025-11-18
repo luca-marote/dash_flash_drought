@@ -15,44 +15,28 @@ st.set_page_config(
 
 st.markdown("""
     <style>
-    /* 1. COR DE FUNDO DO CONTAINER (de "container": {"background-color": "#382626"}) */
-    [data-testid="stSidebar"] {
-        background-color: #382626;
-    }
-    
-    /* 2. TÍTULO/Menu-Title (de "menu-title": {...}) */
-    /* Este seletor afeta o título do aplicativo que aparece na sidebar */
-    [data-testid="stSidebarNav"] > div:first-child h1 {
-        font-size: 22px;
-        font-family: 'Arial, sans-serif';
-        color: white;
-        font-weight: bold;
-        text-align: center;
-        padding: 20px 0; /* Adicionar padding para espaçamento */
-    }
+        /* Aumenta o tamanho da fonte para todos os links de navegação (que incluem os ícones/emojis) */
+        /* Seletores usados pelo Streamlit para os links de navegação na sidebar nativa */
+        .st-emotion-cache-1ae80r8 div a {
+            font-size: 20px; /* Altere este valor para o tamanho desejado (ex: 20px, 24px) */
+            color: white; /* Mantém o texto/ícone branco, supondo um fundo escuro */
+            padding: 10px 20px;
+        }
 
-    /* 3. LINKS DE NAVEGAÇÃO ("nav-link" e "icon") */
-    /* Este seletor afeta todos os itens de navegação (os nomes das páginas) */
-    .st-emotion-cache-1ae80r8 div a {
-        font-size: 15px; /* Tamanho da fonte dos links */
-        color: white; /* Cor do texto e ícones */
-        margin: 0px; 
-        padding: 10px 20px; /* Padding dos links */
-    }
-    
-    /* 4. LINK SELECIONADO ("nav-link-selected") */
-    /* Este seletor é crucial: ele identifica o link de página ativo */
-    .st-emotion-cache-1ae80r8 div a[aria-current="page"] {
-        background-color: white !important; /* Fundo branco forçado */
-        color: black !important; /* Texto preto forçado */
-    }
-    
-    /* Para replicar o 'icon' se ele for texto */
-    /* O Streamlit nativo usa emojis no nome do arquivo (e.g., 🧪 01_Method.py)
-       para os ícones, o tamanho é geralmente controlado pelo tamanho do link. */
+        /* Seletor específico para o texto do link na sidebar (dependente da versão do Streamlit) */
+        [data-testid="stSidebarNavItems"] li a {
+            font-size: 20px;
+        }
+        
+        /* Aumenta o tamanho da fonte da página selecionada (ativa) */
+        .st-emotion-cache-1ae80r8 div a[aria-current="page"] {
+            font-size: 20px; /* Garante que a página ativa também tenha o mesmo tamanho */
+            /* Se você quiser o fundo branco para a página ativa, adicione: */
+            /* background-color: white !important; */
+            /* color: black !important; */
+        }
     </style>
 """, unsafe_allow_html=True)
-
 
 # Estilo CSS personalizado
 st.markdown("""
@@ -143,6 +127,7 @@ st.markdown('<div class="legend"> Comparison between slow-onset (a) and flash (b
 st.image("images/Sudden decline in soil moisture in a few days.png")
         
     
+
 
 
 
