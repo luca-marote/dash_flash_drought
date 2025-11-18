@@ -11,6 +11,7 @@ import streamlit.components.v1 as components
 st.set_page_config(
     page_title="Flash Droughts in Brazil",
     layout="wide",
+     )
 
 st.markdown("""
     <style>
@@ -51,9 +52,7 @@ st.markdown("""
        para os ícones, o tamanho é geralmente controlado pelo tamanho do link. */
     </style>
 """, unsafe_allow_html=True)
-    
-    
-)
+
 
 # Estilo CSS personalizado
 st.markdown("""
@@ -144,5 +143,6 @@ st.markdown('<div class="legend"> Comparison between slow-onset (a) and flash (b
 st.image("images/Sudden decline in soil moisture in a few days.png")
         
     
+
 
 
