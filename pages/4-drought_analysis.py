@@ -13,7 +13,7 @@ tab1, tab2 = st.tabs(["Brazil", "Global"])
      
 with tab2:
         
-    gdf = gdf = load_geodata()
+    gdf = load_geodata()
         
     st.header("🌵 Interactive map of drought distribution")
 
