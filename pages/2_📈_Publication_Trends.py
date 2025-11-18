@@ -7,11 +7,7 @@ import pandas as pd
 
 st.header("📈 Publication Trends")  # anchor removido
     # Criar abas
-    tab1, tab2, tab3, tab4 = st.tabs(["📈 Papers per Year", 
-                                            "📚 Journals/Authors", 
-                                            "🌎 Countries", 
-                                            "🧩 Study Area Scales", 
-                                           ])
+tab1, tab2, tab3, tab4 = st.tabs(["📈 Papers per Year", "📚 Journals/Authors", "🌎 Countries", "🧩 Study Area Scales"])
 
 #--------------------------------------------------------------------------------------------------------------------
 
