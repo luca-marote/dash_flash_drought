@@ -74,7 +74,7 @@ with tab2:
         elif isinstance(geom, (Polygon, MultiPolygon)):
             folium.GeoJson(
                 data=geom,
-                style_function=lambda x, cls=row.get("Class"): {
+                style_function=lambda feature, cls=row.get("Class"): {
                     "fillColor": get_color(cls),
                     "color": get_color(cls),
                     "weight": 1,
