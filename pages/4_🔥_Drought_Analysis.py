@@ -46,7 +46,7 @@ with tab2:
         return color_map.get(class_name, "gray")
 
     for _, row in gdf_filtrado.iterrows():
-
+        
         geom = row.geometry
 
         popup_html = f"""
