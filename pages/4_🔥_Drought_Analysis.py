@@ -72,16 +72,22 @@ with tab2:
         # Se for polígono → GeoJson
         # -------------------------
         elif isinstance(geom, (Polygon, MultiPolygon)):
-            folium.GeoJson(
-                data=geom.__geo_interface__,  # garante que vira dict serializável
-                style_function=lambda feature: {
-                    "fillColor": get_color(row.get("Class")),
-                    "color": get_color(row.get("Class")),
-                    "weight": 1,
-                    "fillOpacity": 0.25,
-                },
-                tooltip=popup_html
-            ).add_to(m)
+            geojson_dict = {
+                "type": "Feature",
+                "geometry": geom.__geo_interface__,
+                "properties": {"Class": row.get("Class")}
+            }
+
+        folium.GeoJson(
+            data=geojson_dict,
+            style_function=lambda feature: {
+                "fillColor": get_color(feature["properties"]["Class"]),
+                "color": get_color(feature["properties"]["Class"]),
+                "weight": 1,
+                "fillOpacity": 0.25,
+            },
+            tooltip=popup_html
+        ).add_to(m)
 
     # --- Exibir mapa no dashboard ---
     st_folium(m, width=1200, height=600)
