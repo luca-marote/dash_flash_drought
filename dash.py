@@ -167,7 +167,7 @@ if selected == "Home":
     st.markdown('<div class="legend"> Comparison between slow-onset (a) and flash (b) droughts highlighting their key characteristics.\
                 On the y-axis, SM is soil moisture, P is precipitation, and ET is evapotranspiration.', unsafe_allow_html=True) 
     
-    st.image("Sudden decline in soil moisture in a few days.png")
+    st.image("images\Sudden decline in soil moisture in a few days.png")
         
     
     
@@ -704,6 +704,7 @@ elif selected == "Thematic Trends":
     
 
     
+
 
 
 
