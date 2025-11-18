@@ -78,7 +78,7 @@ with tab2:
                 "properties": {"Class": row.get("Class")}
             }
 
-        folium.GeoJson(
+            folium.GeoJson(
             data=geojson_dict,
             style_function=lambda feature: {
                 "fillColor": get_color(feature["properties"]["Class"]),
