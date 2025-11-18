@@ -41,6 +41,9 @@ with tab2:
     "Others": "purple",
     }
 
+    # Caso apareça um tipo que não esteja no dicionário → usa cinza
+    def get_color(class_name):
+        return color_map.get(class_name, "gray")
 
     for _, row in gdf_filtrado.iterrows():
 
@@ -71,12 +74,12 @@ with tab2:
         elif isinstance(geom, (Polygon, MultiPolygon)):
             folium.GeoJson(
                 data=geom,
-                style_function=lambda x: {
-                    "fillColor": "#ff7800",
-                    "color": "#ff7800",
+                style_function=lambda x, cls=row.get("Class"): {
+                    "fillColor": get_color(cls),
+                    "color": get_color(cls),
                     "weight": 1,
                     "fillOpacity": 0.25,
-                    },
+                }
                 tooltip=popup_html
             ).add_to(m)
 
