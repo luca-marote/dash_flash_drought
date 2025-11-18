@@ -1,3 +1,6 @@
+import streamlit as st
+import streamlit.components.v1 as components
+
 link_url = "https://review-fd-map.netlify.app/"
 
 st.header("Distribution of peer-reviewed studies")
