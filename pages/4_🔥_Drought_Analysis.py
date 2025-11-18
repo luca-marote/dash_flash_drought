@@ -34,6 +34,14 @@ with tab2:
     # --- Criar mapa dinâmico ---
     m = folium.Map(location=[-14, -52], zoom_start=4, tiles='cartodb positron')
 
+    color_map = {
+    "FDs": "orange",
+    "ADs": "green",
+    "EDs": "red",
+    "Others": "purple",
+    }
+
+
     for _, row in gdf_filtrado.iterrows():
 
         geom = row.geometry
@@ -51,7 +59,7 @@ with tab2:
             folium.Marker(
                 location=[geom.y, geom.x],
                 popup=popup_html,
-                icon=folium.Icon(color="orange", icon="cloud")
+                color=get_color(row.get("Class")))
             ).add_to(m)
 
     # -------------------------
