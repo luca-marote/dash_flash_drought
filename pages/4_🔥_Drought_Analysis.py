@@ -59,7 +59,10 @@ with tab2:
             folium.Marker(
                 location=[geom.y, geom.x],
                 popup=popup_html,
-                color=get_color(row.get("Class")))
+                icon=folium.Icon(
+                    color=get_color(row.get("Class")),
+                    icon="flame"
+                )
             ).add_to(m)
 
     # -------------------------
