@@ -64,7 +64,7 @@ with tab2:
                 popup=popup_html,
                 icon=folium.Icon(
                     color=get_color(row.get("Class")),
-                    icon="flame"
+                    icon="fire"
                 )
             ).add_to(m)
 
