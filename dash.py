@@ -190,7 +190,7 @@ elif selected == "Method":
         
     st.markdown("<br><br>", unsafe_allow_html=True)
         
-    st.image("images\methods.png")
+    st.image("images/methods.png")
 
 
 #--------------------------------------------------------------------------------------------------------------------
@@ -704,6 +704,7 @@ elif selected == "Thematic Trends":
     
 
     
+
 
 
 
