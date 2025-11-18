@@ -554,6 +554,10 @@ elif selected =="Interactive Map":
     st.markdown(iframe_html, unsafe_allow_html=True)
 
 
+@st.cache_data
+def load_geodata():
+    return gpd.read_file('gdf_drought_analysis_2.gpkg')
+
 elif selected =="Drought Analysis":
 
     st.header("🌡️ Drought Analysis")  # anchor removido
@@ -562,7 +566,7 @@ elif selected =="Drought Analysis":
      
     with tab2:
         
-        gdf = gpd.read_file('gdf_drought_analysis_2.gpkg')
+        gdf = gdf = load_geodata()
         
         st.header("🌵 Interactive map of drought distribution")
 
@@ -704,6 +708,7 @@ elif selected == "Thematic Trends":
     
 
     
+
 
 
 
