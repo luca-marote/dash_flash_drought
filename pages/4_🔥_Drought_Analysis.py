@@ -55,9 +55,9 @@ with tab2:
         <b>Year:</b> {row.get('Ano de publicação', '—')}
         """
 
-    # -------------------------
-    # Se for ponto → Marker
-    # -------------------------
+        # -------------------------
+        # Se for ponto → Marker
+        # -------------------------
         if isinstance(geom, Point):
             folium.Marker(
                 location=[geom.y, geom.x],
@@ -68,9 +68,9 @@ with tab2:
                 )
             ).add_to(m)
 
-    # -------------------------
-    # Se for polígono → GeoJson
-    # -------------------------
+        # -------------------------
+        # Se for polígono → GeoJson
+        # -------------------------
         elif isinstance(geom, (Polygon, MultiPolygon)):
             folium.GeoJson(
                 data=geom,
