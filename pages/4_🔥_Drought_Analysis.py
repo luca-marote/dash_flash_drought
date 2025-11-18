@@ -35,10 +35,10 @@ with tab2:
     m = folium.Map(location=[-14, -52], zoom_start=4, tiles='cartodb positron')
 
     color_map = {
-    "FDs": "orange",
-    "ADs": "green",
-    "EDs": "red",
-    "Others": "purple",
+        "FDs": "orange",
+        "ADs": "green",
+        "EDs": "red",
+        "Others": "purple",
     }
 
     # Caso apareça um tipo que não esteja no dicionário → usa cinza
