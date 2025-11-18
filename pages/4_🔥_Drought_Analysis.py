@@ -73,10 +73,10 @@ with tab2:
         # -------------------------
         elif isinstance(geom, (Polygon, MultiPolygon)):
             folium.GeoJson(
-                data=geom,
-                style_function=lambda feature, cls=row.get("Class"): {
-                    "fillColor": get_color(cls),
-                    "color": get_color(cls),
+                data=geom.__geo_interface__,  # garante que vira dict serializável
+                style_function=lambda feature: {
+                    "fillColor": get_color(row.get("Class")),
+                    "color": get_color(row.get("Class")),
                     "weight": 1,
                     "fillOpacity": 0.25,
                 },
