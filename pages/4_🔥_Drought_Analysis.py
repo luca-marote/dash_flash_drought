@@ -23,15 +23,27 @@ with tab2:
     st.header("🌵 Interactive map of drought distribution")
 
     # --- Filtros ---
-    anos = st.multiselect("Select year:", sorted(gdf['Ano de publicação'].unique()))
-    escalas = st.multiselect("Select scale:", sorted(gdf['Escala de abrangência'].unique()))
+    ano_min = int(gdf['Ano de publicação'].min())
+    ano_max = int(gdf['Ano de publicação'].max())
+    anos = st.slider(
+        "Select year range:",
+        min_value=ano_min,
+        max_value=ano_max,
+        value=(ano_min, ano_max)  # valores iniciais
+    )
+    escalas = st.selectbox(
+        "Select scale:",
+        options=sorted(gdf['Escala de abrangência'].unique())
+    )
         
-    # --- Aplicar filtros ---
-    gdf_filtrado = gdf.copy()
-    if anos:
-        gdf_filtrado = gdf_filtrado[gdf_filtrado['Ano de publicação'].isin(anos)]
+    gdf_filtrado = gdf[
+    (gdf['Ano de publicação'] >= anos[0]) & 
+    (gdf['Ano de publicação'] <= anos[1])
+    ]
+
     if escalas:
-        gdf_filtrado = gdf_filtrado[gdf_filtrado['Escala de abrangência'].isin(escalas)]
+    gdf_filtrado = gdf_filtrado[gdf_filtrado['Escala de abrangência'] == escalas]
+
 
     # --- Criar mapa dinâmico ---
     m = folium.Map(location=[-14, -52], zoom_start=4, tiles='cartodb positron')
