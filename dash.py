@@ -74,55 +74,49 @@ st.markdown(
 st.markdown("<br><br> ", unsafe_allow_html=True)
     
 st.markdown("""
-<div style="text-align:center; margin-top:20px;">
+<div style="text-align:center; margin-top:20px; display:flex; justify-content:center; gap:22px; align-items:center; flex-wrap:wrap;">
 
-    <div class="subtitle" style="margin-bottom:10px;">
-        <sup>a</sup>
-        <a href="https://www.ft.unicamp.br/" target="_blank">
-            <img src="https://upload.wikimedia.org/wikipedia/pt/thumb/b/b2/UNICAMP_logo.svg/966px-UNICAMP_logo.svg.png" 
-                 style="height:45px; vertical-align:middle; margin-left:6px;">
-        </a>
-    </div>
+  <div style="text-align:center;">
+    <div style="font-size:12px;"><sup>a</sup></div>
+    <a href="https://www.ft.unicamp.br/" target="_blank" rel="noopener noreferrer">
+      <img src="https://upload.wikimedia.org/wikipedia/pt/thumb/b/b2/UNICAMP_logo.svg/966px-UNICAMP_logo.svg.png" style="height:45px; display:block; margin:4px auto;">
+    </a>
+  </div>
 
-    <div class="subtitle" style="margin-bottom:10px;">
-        <sup>b</sup>
-        <a href="https://www.met.psu.edu/" target="_blank">
-            <img src="https://brand.psu.edu/images/backgrounds/veritcal-1-mark_registered.png" 
-                 style="height:45px; vertical-align:middle; margin-left:6px;">
-        </a>
-    </div>
+  <div style="text-align:center;">
+    <div style="font-size:12px;"><sup>b</sup></div>
+    <a href="https://www.met.psu.edu/" target="_blank" rel="noopener noreferrer">
+      <img src="https://brand.psu.edu/images/backgrounds/veritcal-1-mark_registered.png" style="height:45px; display:block; margin:4px auto;">
+    </a>
+  </div>
 
-    <div class="subtitle" style="margin-bottom:10px;">
-        <sup>c</sup>
-        <a href="https://eeps.rice.edu/" target="_blank">
-            <img src="https://logos-world.net/wp-content/uploads/2023/08/Rice-University-Symbol.png" 
-                 style="height:45px; vertical-align:middle; margin-left:6px;">
-        </a>
-    </div>
+  <div style="text-align:center;">
+    <div style="font-size:12px;"><sup>c</sup></div>
+    <a href="https://eeps.rice.edu/" target="_blank" rel="noopener noreferrer">
+      <img src="https://logos-world.net/wp-content/uploads/2023/08/Rice-University-Symbol.png" style="height:45px; display:block; margin:4px auto;">
+    </a>
+  </div>
 
-    <div class="subtitle" style="margin-bottom:10px;">
-        <sup>d</sup>
-        <a href="https://eesc.usp.br/" target="_blank">
-            <img src="https://scs.usp.br/identidadevisual/wp-content/uploads/2022/08/usp-logo-png-1.png" 
-                 style="height:45px; vertical-align:middle; margin-left:6px;">
-        </a>
-    </div>
+  <div style="text-align:center;">
+    <div style="font-size:12px;"><sup>d</sup></div>
+    <a href="https://eesc.usp.br/" target="_blank" rel="noopener noreferrer">
+      <img src="https://scs.usp.br/identidadevisual/wp-content/uploads/2022/08/usp-logo-png-1.png" style="height:45px; display:block; margin:4px auto;">
+    </a>
+  </div>
 
-    <div class="subtitle" style="margin-bottom:10px;">
-        <sup>e</sup>
-        <a href="https://www.ufms.br/" target="_blank">
-            <img src="https://www.fundect.ms.gov.br/wp-content/uploads/2019/06/ufms_logo_positivo_assinatura_vertical_rgb.png" 
-                 style="height:45px; vertical-align:middle; margin-left:6px;">
-        </a>
-    </div>
+  <div style="text-align:center;">
+    <div style="font-size:12px;"><sup>e</sup></div>
+    <a href="https://www.ufms.br/" target="_blank" rel="noopener noreferrer">
+      <img src="https://www.fundect.ms.gov.br/wp-content/uploads/2019/06/ufms_logo_positivo_assinatura_vertical_rgb.png" style="height:45px; display:block; margin:4px auto;">
+    </a>
+  </div>
 
-    <div class="subtitle" style="margin-bottom:10px;">
-        <sup>f</sup>
-        <a href="https://engineering.tamu.edu/civil/index.html" target="_blank">
-            <img src="https://upload.wikimedia.org/wikipedia/en/thumb/f/f7/Texas_A%26M_University_seal.svg/1200px-Texas_A%26M_University_seal.svg.png" 
-                 style="height:45px; vertical-align:middle; margin-left:6px;">
-        </a>
-    </div>
+  <div style="text-align:center;">
+    <div style="font-size:12px;"><sup>f</sup></div>
+    <a href="https://engineering.tamu.edu/civil/index.html" target="_blank" rel="noopener noreferrer">
+      <img src="https://upload.wikimedia.org/wikipedia/en/thumb/f/f7/Texas_A%26M_University_seal.svg/1200px-Texas_A%26M_University_seal.svg.png" style="height:45px; display:block; margin:4px auto;">
+    </a>
+  </div>
 
 </div>
 """, unsafe_allow_html=True)
@@ -154,6 +148,7 @@ st.markdown('<div class="legend"> Comparison between slow-onset (a) and flash (b
 st.image("images/Sudden decline in soil moisture in a few days.png")
         
     
+
 
 
 
