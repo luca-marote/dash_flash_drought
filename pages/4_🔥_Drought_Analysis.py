@@ -33,9 +33,12 @@ with tab1:
         value=(ano_min, ano_max)  # valores iniciais
         )
     
+    opcoes_escalas = ['All'] + sorted(gdf['Escala de abrangência'].unique()) 
+
     escalas = st.selectbox(
         "Select scale:",
-        options=sorted(gdf['Escala de abrangência'].unique())
+        options=opcoes_escalas, # Usa a nova lista com 'All'
+        index=0 # Garante que 'All' (o índice 0) seja o valor inicial
         )
         
     gdf_filtrado = gdf[
@@ -43,9 +46,14 @@ with tab1:
     (gdf['Ano de publicação'] <= anos[1])
         ]
 
-    if escalas:
+    # 2. Modifica a lógica de filtragem para ignorar o filtro se 'All' for selecionado.
+    if escalas != 'All': 
         gdf_filtrado = gdf_filtrado[gdf_filtrado['Escala de abrangência'] == escalas]
-
+    escalas = st.selectbox(
+        "Select scale:",
+        options=sorted(gdf['Escala de abrangência'].unique())
+        )
+        
 
     # --- Criar mapa dinâmico ---
     m = folium.Map(location=[-14, -52], zoom_start=4, tiles='cartodb positron')
