@@ -13,34 +13,6 @@ st.set_page_config(
     layout="wide",
      )
 
-st.markdown("""
-    <style>
-        /* Aumenta a fonte de TODOS os links de navegação da sidebar */
-        a[data-testid*="stSidebarNavItem"] {
-            font-size: 22px !important; /* Tamanho da fonte dos links e ícones */
-            color: white !important; /* Mantém o texto/ícone branco, se o fundo for escuro */
-            padding: 12px 20px !important; /* Adiciona um padding maior */
-        }
-        
-        /* Aumenta o tamanho da fonte da página selecionada (ativa) */
-        /* Garante que o item ativo também tenha o tamanho maior */
-        a[data-testid*="stSidebarNavItem"][aria-current="page"] {
-            font-size: 22px !important;
-            /* Se quiser replicar o estilo de seleção: */
-            /* background-color: white !important; */
-            /* color: black !important; */
-        }
-        
-        /* Aumenta a fonte do título "Browse:" (se você o recriou com markdown) */
-        /* Altere o seletor H3 se você usou outro nível de cabeçalho ou div */
-        [data-testid="stSidebar"] h3 {
-             font-size: 24px !important;
-             color: white !important;
-        }
-        
-    </style>
-""", unsafe_allow_html=True)
-
 
 # Estilo CSS personalizado
 st.markdown("""
@@ -83,13 +55,24 @@ st.markdown("""
 st.markdown(
     '<div class="title">Uncovering Flash Droughts in Brazil through Global and Regional Perspectives: A Systematic Literature Review </div>', unsafe_allow_html=True)
     
-st.markdown('<div class="authors"> P. C. M. Vasconcelos<sup>a</sup>,\
-            L. C. D. Marote<sup>a</sup>, \
-            G. A. J. Bimbatti<sup>a</sup>,\
-            G. C. Gesualdo<sup>b</sup>, \
-            N. Vergopolan<sup>c</sup>, \
-            E. Wendland<sup>d</sup>, \
-            P. T. S. Oliveira<sup>e</sup>, A. Mishra<sup>f</sup> &  M. C. Lucas<sup>a</sup> </div>', unsafe_allow_html=True)
+st.markdown(
+    """
+    <div style="text-align:center; font-size:18px; line-height:1.6; margin-top:15px;">
+        <b>
+        <a href="https://orcid.org/0000-0003-1438-7712" target="_blank">P. C. M. Vasconcelos</a><sup>a</sup>,
+        <a href="https://orcid.org/0009-0008-8018-5960" target="_blank">L. C. D. Marote</a><sup>a</sup>, 
+        <a href="ORCID_LINK_AQUI" target="_blank">G. A. J. Bimbatti</a><sup>a</sup>, 
+        <a href="ORCID_LINK_AQUI" target="_blank">G. C. Gesualdo</a><sup>b</sup>, 
+        <a href="ORCID_LINK_AQUI" target="_blank">N. Vergopolan</a><sup>c</sup>, 
+        <a href="ORCID_LINK_AQUI" target="_blank">E. Wendland</a><sup>d</sup>, 
+        <a href="ORCID_LINK_AQUI" target="_blank">P. T. S. Oliveira</a><sup>e</sup>, 
+        <a href="ORCID_LINK_AQUI" target="_blank">A. Mishra</a><sup>f</sup> &
+        <a href="ORCID_LINK_AQUI" target="_blank">M. C. Lucas</a><sup>a</sup>
+        </b>
+    </div>
+    """,
+    unsafe_allow_html=True
+)
                 
                 
     
@@ -131,6 +114,7 @@ st.markdown('<div class="legend"> Comparison between slow-onset (a) and flash (b
 st.image("images/Sudden decline in soil moisture in a few days.png")
         
     
+
 
 
 
