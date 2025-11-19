@@ -145,9 +145,7 @@ with tab1:
         m.get_root().html.add_child(Element(legend_html))
     # --- Exibir mapa no dashboard ---
         st_folium(m, width=1200, height=600)
-
-    
+        
         st.header("Comparison: Brazil & World")
         
         st.image('images/FD_Brazil.png')
-    
