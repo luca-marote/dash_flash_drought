@@ -148,12 +148,8 @@ with tab1:
 
     
     st.header("Comparison: Brazil & World")
-
-    col1, col2 = st.columns(2)
-
-    with col1:
-        
-        st.image('FD_Brazil.png')
+    
+    st.image('FD_Brazil.png')
 
 
 with tab2:
