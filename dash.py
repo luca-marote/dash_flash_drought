@@ -31,7 +31,7 @@ st.markdown("""
             margin-bottom: 5px;
         }
         .authors {
-            font-size: 20px;
+            font-size: 28px;
             text-align: center;
             color: #382626;
         }
@@ -149,6 +149,7 @@ st.markdown('<div class="legend"> Comparison between slow-onset (a) and flash (b
 st.image("images/Sudden decline in soil moisture in a few days.png")
         
     
+
 
 
 
