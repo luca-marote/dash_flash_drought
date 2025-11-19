@@ -32,9 +32,13 @@ with tab2:
         max_value=ano_max,
         value=(ano_min, ano_max)  # valores iniciais
     )
+    default = 'Local'
+    default_index = opcoes_escalas.index(default)
+    
     escalas = st.selectbox(
         "Select scale:",
-        options=sorted(gdf['Escala de abrangência'].unique())
+        options=sorted(gdf['Escala de abrangência'].unique()),
+        index=default_index
     )
         
     gdf_filtrado = gdf[
@@ -110,7 +114,7 @@ with tab2:
                 bottom: 50px; left: 50px; width: 180px; height: auto; 
                 border: 2px solid gray; z-index:9999; font-size:14px;
                 background-color: white; opacity: 0.95; padding: 10px;">
-        <p style="font-weight: bold; margin-bottom: 5px;">Tipos de Seca</p>
+        <p style="font-weight: bold; margin-bottom: 5px;">Drought Categories</p>
     """
 
     display_names = {
