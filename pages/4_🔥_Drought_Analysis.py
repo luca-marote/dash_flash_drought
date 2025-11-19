@@ -105,5 +105,49 @@ with tab2:
             tooltip=popup_html
         ).add_to(m)
 
+    legend_html = """
+    <div style="position: fixed; 
+                bottom: 50px; left: 50px; width: 180px; height: auto; 
+                border: 2px solid gray; z-index:9999; font-size:14px;
+                background-color: white; opacity: 0.95; padding: 10px;">
+        <p style="font-weight: bold; margin-bottom: 5px;">Tipos de Seca</p>
+    """
+
+    display_names = {
+        "FDs": "Flash Drought",
+        "ADs": "Agricultural Drought",
+        "EDs": "Extreme Drought",
+        "Others": "Others",
+    }
+
+    for class_name, color in color_map.items():
+        name = display_names.get(class_name, class_name)
+        legend_html += f"""
+            <div style="margin-bottom: 5px;">
+                <i style="background: {color}; 
+                          width: 15px; height: 15px; 
+                          display: inline-block; 
+                          margin-right: 5px; 
+                          border: 1px solid #333;"></i> 
+                {name}
+            </div>
+        """
+
+# Adiciona linha para a cor padrão ("gray")
+    legend_html += f"""
+        <div style="margin-bottom: 5px;">
+            <i style="background: gray; 
+                      width: 15px; height: 15px; 
+                      display: inline-block; 
+                      margin-right: 5px; 
+                      border: 1px solid #333;"></i> 
+            Não Classificado
+        </div>
+    """
+
+    legend_html += "</div>"
+
+# Injeta o HTML no objeto do mapa Folium (m)
+    m.get_root().html.add_child(Element(legend_html))
     # --- Exibir mapa no dashboard ---
     st_folium(m, width=1200, height=600)
