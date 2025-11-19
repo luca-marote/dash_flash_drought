@@ -4,6 +4,7 @@ import numpy as np
 import pandas as pd
 from streamlit_folium import st_folium
 import folium
+from folium.elements import Element
 import geopandas as gpd
 from shapely.geometry import Point, Polygon, MultiPolygon
 from folium.plugins import MarkerCluster
