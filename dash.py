@@ -97,8 +97,8 @@ st.markdown("""
     <!-- c -->
     <div class="subtitle" style="margin-bottom:10px;">
         <sup>c</sup>
-        <a href="LINK_RICE_AQUI" target="_blank">
-            <img src="CAMINHO_LOGO_RICE_AQUI" 
+        <a href="https://eeps.rice.edu/" target="_blank">
+            <img src="https://logos-world.net/wp-content/uploads/2023/08/Rice-University-Symbol.png" 
                  style="height:45px; vertical-align:middle; margin-left:6px;">
         </a>
     </div>
@@ -106,8 +106,8 @@ st.markdown("""
     <!-- d -->
     <div class="subtitle" style="margin-bottom:10px;">
         <sup>d</sup>
-        <a href="LINK_USP_AQUI" target="_blank">
-            <img src="CAMINHO_LOGO_USP_AQUI" 
+        <a href="https://eesc.usp.br/" target="_blank">
+            <img src="https://scs.usp.br/identidadevisual/wp-content/uploads/2022/08/usp-logo-png-1.png" 
                  style="height:45px; vertical-align:middle; margin-left:6px;">
         </a>
     </div>
@@ -115,8 +115,8 @@ st.markdown("""
     <!-- e -->
     <div class="subtitle" style="margin-bottom:10px;">
         <sup>e</sup>
-        <a href="LINK_UFMS_AQUI" target="_blank">
-            <img src="CAMINHO_LOGO_UFMS_AQUI" 
+        <a href="https://www.ufms.br/" target="_blank">
+            <img src="https://www.fundect.ms.gov.br/wp-content/uploads/2019/06/ufms_logo_positivo_assinatura_vertical_rgb.png" 
                  style="height:45px; vertical-align:middle; margin-left:6px;">
         </a>
     </div>
@@ -124,8 +124,8 @@ st.markdown("""
     <!-- f -->
     <div class="subtitle" style="margin-bottom:10px;">
         <sup>f</sup>
-        <a href="LINK_TAMU_AQUI" target="_blank">
-            <img src="CAMINHO_LOGO_TAMU_AQUI" 
+        <a href="https://engineering.tamu.edu/civil/index.html" target="_blank">
+            <img src="https://upload.wikimedia.org/wikipedia/en/thumb/f/f7/Texas_A%26M_University_seal.svg/1200px-Texas_A%26M_University_seal.svg.png" 
                  style="height:45px; vertical-align:middle; margin-left:6px;">
         </a>
     </div>
@@ -160,6 +160,7 @@ st.markdown('<div class="legend"> Comparison between slow-onset (a) and flash (b
 st.image("images/Sudden decline in soil moisture in a few days.png")
         
     
+
 
 
 
