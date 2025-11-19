@@ -31,7 +31,7 @@ with tab1:
         min_value=ano_min,
         max_value=ano_max,
         value=(ano_min, ano_max)  # valores iniciais
-    )
+        )
 
     opcoes_escalas = sorted(gdf['Escala de abrangência'].unique())
     default = 'Local'
@@ -41,12 +41,12 @@ with tab1:
         "Select scale:",
         options=opcoes_escalas,
         index=default_index
-    )
+        )
         
     gdf_filtrado = gdf[
     (gdf['Ano de publicação'] >= anos[0]) & 
     (gdf['Ano de publicação'] <= anos[1])
-    ]
+        ]
 
     if escalas:
         gdf_filtrado = gdf_filtrado[gdf_filtrado['Escala de abrangência'] == escalas]
@@ -124,7 +124,7 @@ with tab1:
             "ADs": "Agricultural Drought",
             "EDs": "Extreme Drought",
             "Others": "Others",
-        }
+            }
 
         for class_name, color in color_map.items():
             name = display_names.get(class_name, class_name)
