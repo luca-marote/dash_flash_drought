@@ -12,9 +12,9 @@ from folium.plugins import MarkerCluster
 
 st.header("🌡️ Drought Analysis")  # anchor removido
     
-tab1, tab2 = st.tabs(["Brazil", "Global"])
+tab1, tab2 = st.tabs(["Geographic Distribution", "Indicators/Variables"])
      
-with tab2:
+with tab1:
 
     @st.cache_data
     def load_geodata():
@@ -145,3 +145,11 @@ with tab2:
     m.get_root().html.add_child(Element(legend_html))
     # --- Exibir mapa no dashboard ---
     st_folium(m, width=1200, height=600)
+
+    
+    st.header("Comparison: Brazil & World")
+
+
+
+with tab2:
+    
