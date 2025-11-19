@@ -70,8 +70,6 @@ st.markdown(
                 
     
     #AFILIAÇÕES
-    
-st.markdown("<br><br> ", unsafe_allow_html=True)
 
 IMG_SIZE = 70       
 INDEX_SIZE = 16     
@@ -151,6 +149,7 @@ st.markdown('<div class="legend"> Comparison between slow-onset (a) and flash (b
 st.image("images/Sudden decline in soil moisture in a few days.png")
         
     
+
 
 
 
