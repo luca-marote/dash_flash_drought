@@ -57,22 +57,80 @@ st.markdown(
     
 st.markdown(
     """
-    <div style="text-align:center; font-size:18px; line-height:1.6; margin-top:15px;">
+    <div style="text-align:center; font-size:18px; line-height:1.7; margin-top:15px;">
         <b>
-        <a href="https://orcid.org/0000-0003-1438-7712" target="_blank">P. C. M. Vasconcelos</a><sup>a</sup>,
-        <a href="https://orcid.org/0009-0008-8018-5960" target="_blank">L. C. D. Marote</a><sup>a</sup>, 
-        <a href="ORCID_LINK_AQUI" target="_blank">G. A. J. Bimbatti</a><sup>a</sup>, 
-        <a href="http://orcid.org/0000-0002-0125-6468" target="_blank">G. C. Gesualdo</a><sup>b</sup>, 
-        <a href="https://orcid.org/0000-0002-7298-0509" target="_blank">N. Vergopolan</a><sup>c</sup>, 
-        <a href="http://orcid.org/0000-0003-3374-608X" target="_blank">E. Wendland</a><sup>d</sup>, 
-        <a href="https://orcid.org/0000-0003-2806-0083" target="_blank">P. T. S. Oliveira</a><sup>e</sup>, 
-        <a href="https://scholar.google.com/citations?user=Xq6iWHUAAAAJ&hl" target="_blank">A. Mishra</a><sup>f</sup> &
-        <a href="https://orcid.org/0000-0002-1732-0241" target="_blank">M. C. Lucas</a><sup>a</sup>
+
+        <!-- P. C. M. Vasconcelos -->
+        P. C. M. Vasconcelos<sup>a</sup>
+        <a href="https://orcid.org/0000-0003-1438-7712" target="_blank">
+            <img src="https://orcid.org/sites/default/files/images/orcid_16x16.png" 
+                 style="width:16px; vertical-align:middle; margin-left:4px;">
+        </a>,
+
+        <!-- L. C. D. Marote -->
+        L. C. D. Marote<sup>a</sup>
+        <a href="https://orcid.org/0009-0008-8018-5960" target="_blank">
+            <img src="https://orcid.org/sites/default/files/images/orcid_16x16.png" 
+                 style="width:16px; vertical-align:middle; margin-left:4px;">
+        </a>,
+
+        <!-- G. A. J. Bimbatti -->
+        G. A. J. Bimbatti<sup>a</sup>
+        <a href="ORCID_LINK_AQUI" target="_blank">
+            <img src="https://orcid.org/sites/default/files/images/orcid_16x16.png" 
+                 style="width:16px; vertical-align:middle; margin-left:4px; opacity:0.4;">
+        </a>,
+
+        <!-- G. C. Gesualdo -->
+        G. C. Gesualdo<sup>b</sup>
+        <a href="https://scholar.google.com/citations?user=n9sYorwAAAAJ&hl=pt-BR" target="_blank">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/c/c7/Google_Scholar_logo.svg" 
+                 style="width:16px; vertical-align:middle; margin-left:4px;">
+        </a>,
+
+        <!-- N. Vergopolan -->
+        N. Vergopolan<sup>c</sup>
+        <a href="https://orcid.org/0000-0002-7298-0509" target="_blank">
+            <img src="https://orcid.org/sites/default/files/images/orcid_16x16.png" 
+                 style="width:16px; vertical-align:middle; margin-left:4px;">
+        </a>,
+
+        <!-- E. Wendland -->
+        E. Wendland<sup>d</sup>
+        <a href="http://orcid.org/0000-0003-3374-608X" target="_blank">
+            <img src="https://orcid.org/sites/default/files/images/orcid_16x16.png" 
+                 style="width:16px; vertical-align:middle; margin-left:4px;">
+        </a>,
+
+        <!-- P. T. S. Oliveira -->
+        P. T. S. Oliveira<sup>e</sup>
+        <a href="https://orcid.org/0000-0003-2806-0083" target="_blank">
+            <img src="https://orcid.org/sites/default/files/images/orcid_16x16.png" 
+                 style="width:16px; vertical-align:middle; margin-left:4px;">
+        </a>,
+
+        <!-- A. Mishra -->
+        A. Mishra<sup>f</sup>
+        <a href="https://scholar.google.com/citations?user=Xq6iWHUAAAAJ&hl" target="_blank">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/c/c7/Google_Scholar_logo.svg" 
+                 style="width:16px; vertical-align:middle; margin-left:4px;">
+        </a>
+
+        &
+
+        <!-- M. C. Lucas -->
+        M. C. Lucas<sup>a</sup>
+        <a href="https://orcid.org/0000-0002-1732-0241" target="_blank">
+            <img src="https://orcid.org/sites/default/files/images/orcid_16x16.png" 
+                 style="width:16px; vertical-align:middle; margin-left:4px;">
+        </a>
+
         </b>
     </div>
     """,
     unsafe_allow_html=True
 )
+
                 
                 
     
@@ -114,6 +172,7 @@ st.markdown('<div class="legend"> Comparison between slow-onset (a) and flash (b
 st.image("images/Sudden decline in soil moisture in a few days.png")
         
     
+
 
 
 
