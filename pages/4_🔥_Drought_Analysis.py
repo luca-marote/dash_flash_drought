@@ -150,7 +150,4 @@ with tab1:
         st.header("Comparison: Brazil & World")
     
         st.image('FD_Brazil.png')
-
-
-with tab2:
     
