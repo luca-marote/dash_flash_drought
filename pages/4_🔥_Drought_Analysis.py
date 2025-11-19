@@ -67,7 +67,6 @@ with tab2:
         geom = row.geometry
 
         popup_html = f"""
-        <b>Study:</b> {row.get('Class', '—')}<br>
         <b>Scale:</b> {row.get('Escala de abrangência', '—')}<br>
         <b>Year:</b> {row.get('Ano de publicação', '—')}
         """
@@ -133,18 +132,6 @@ with tab2:
                 {name}
             </div>
         """
-
-# Adiciona linha para a cor padrão ("gray")
-    legend_html += f"""
-        <div style="margin-bottom: 5px;">
-            <i style="background: gray; 
-                      width: 15px; height: 15px; 
-                      display: inline-block; 
-                      margin-right: 5px; 
-                      border: 1px solid #333;"></i> 
-            Não Classificado
-        </div>
-    """
 
     legend_html += "</div>"
 
