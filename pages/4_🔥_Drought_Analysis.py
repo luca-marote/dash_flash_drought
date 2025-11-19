@@ -6,6 +6,8 @@ from streamlit_folium import st_folium
 import folium
 import geopandas as gpd
 from shapely.geometry import Point, Polygon, MultiPolygon
+from folium.plugins import MarkerCluster
+
 
 st.header("🌡️ Drought Analysis")  # anchor removido
     
@@ -44,7 +46,9 @@ with tab2:
     # Caso apareça um tipo que não esteja no dicionário → usa cinza
     def get_color(class_name):
         return color_map.get(class_name, "gray")
-
+        
+    marker_cluster = MarkerCluster().add_to(m)
+    
     for _, row in gdf_filtrado.iterrows():
         
         geom = row.geometry
@@ -66,7 +70,7 @@ with tab2:
                     color=get_color(row.get("Class")),
                     icon="fire"
                 )
-            ).add_to(m)
+            ).add_to((marker_cluster))
 
         # -------------------------
         # Se for polígono → GeoJson
