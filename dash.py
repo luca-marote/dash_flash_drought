@@ -76,7 +76,6 @@ st.markdown("<br><br> ", unsafe_allow_html=True)
 st.markdown("""
 <div style="text-align:center; margin-top:20px;">
 
-    <!-- a -->
     <div class="subtitle" style="margin-bottom:10px;">
         <sup>a</sup>
         <a href="https://www.ft.unicamp.br/" target="_blank">
@@ -85,7 +84,6 @@ st.markdown("""
         </a>
     </div>
 
-    <!-- b -->
     <div class="subtitle" style="margin-bottom:10px;">
         <sup>b</sup>
         <a href="https://www.met.psu.edu/" target="_blank">
@@ -94,7 +92,6 @@ st.markdown("""
         </a>
     </div>
 
-    <!-- c -->
     <div class="subtitle" style="margin-bottom:10px;">
         <sup>c</sup>
         <a href="https://eeps.rice.edu/" target="_blank">
@@ -103,7 +100,6 @@ st.markdown("""
         </a>
     </div>
 
-    <!-- d -->
     <div class="subtitle" style="margin-bottom:10px;">
         <sup>d</sup>
         <a href="https://eesc.usp.br/" target="_blank">
@@ -112,7 +108,6 @@ st.markdown("""
         </a>
     </div>
 
-    <!-- e -->
     <div class="subtitle" style="margin-bottom:10px;">
         <sup>e</sup>
         <a href="https://www.ufms.br/" target="_blank">
@@ -121,7 +116,6 @@ st.markdown("""
         </a>
     </div>
 
-    <!-- f -->
     <div class="subtitle" style="margin-bottom:10px;">
         <sup>f</sup>
         <a href="https://engineering.tamu.edu/civil/index.html" target="_blank">
@@ -160,6 +154,7 @@ st.markdown('<div class="legend"> Comparison between slow-onset (a) and flash (b
 st.image("images/Sudden decline in soil moisture in a few days.png")
         
     
+
 
 
 
