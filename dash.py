@@ -62,12 +62,12 @@ st.markdown(
         <a href="https://orcid.org/0000-0003-1438-7712" target="_blank">P. C. M. Vasconcelos</a><sup>a</sup>,
         <a href="https://orcid.org/0009-0008-8018-5960" target="_blank">L. C. D. Marote</a><sup>a</sup>, 
         <a href="ORCID_LINK_AQUI" target="_blank">G. A. J. Bimbatti</a><sup>a</sup>, 
-        <a href="ORCID_LINK_AQUI" target="_blank">G. C. Gesualdo</a><sup>b</sup>, 
-        <a href="ORCID_LINK_AQUI" target="_blank">N. Vergopolan</a><sup>c</sup>, 
-        <a href="ORCID_LINK_AQUI" target="_blank">E. Wendland</a><sup>d</sup>, 
-        <a href="ORCID_LINK_AQUI" target="_blank">P. T. S. Oliveira</a><sup>e</sup>, 
-        <a href="ORCID_LINK_AQUI" target="_blank">A. Mishra</a><sup>f</sup> &
-        <a href="ORCID_LINK_AQUI" target="_blank">M. C. Lucas</a><sup>a</sup>
+        <a href="http://orcid.org/0000-0002-0125-6468" target="_blank">G. C. Gesualdo</a><sup>b</sup>, 
+        <a href="https://orcid.org/0000-0002-7298-0509" target="_blank">N. Vergopolan</a><sup>c</sup>, 
+        <a href="http://orcid.org/0000-0003-3374-608X" target="_blank">E. Wendland</a><sup>d</sup>, 
+        <a href="https://orcid.org/0000-0003-2806-0083" target="_blank">P. T. S. Oliveira</a><sup>e</sup>, 
+        <a href="https://scholar.google.com/citations?user=Xq6iWHUAAAAJ&hl" target="_blank">A. Mishra</a><sup>f</sup> &
+        <a href="https://orcid.org/0000-0002-1732-0241" target="_blank">M. C. Lucas</a><sup>a</sup>
         </b>
     </div>
     """,
@@ -114,6 +114,7 @@ st.markdown('<div class="legend"> Comparison between slow-onset (a) and flash (b
 st.image("images/Sudden decline in soil moisture in a few days.png")
         
     
+
 
 
 
