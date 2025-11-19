@@ -42,7 +42,7 @@ with tab2:
     ]
 
     if escalas:
-    gdf_filtrado = gdf_filtrado[gdf_filtrado['Escala de abrangência'] == escalas]
+        gdf_filtrado = gdf_filtrado[gdf_filtrado['Escala de abrangência'] == escalas]
 
 
     # --- Criar mapa dinâmico ---
@@ -53,7 +53,7 @@ with tab2:
         "ADs": "green",
         "EDs": "red",
         "Others": "purple",
-    }
+        }
 
     # Caso apareça um tipo que não esteja no dicionário → usa cinza
     def get_color(class_name):
@@ -92,7 +92,7 @@ with tab2:
                 "type": "Feature",
                 "geometry": geom.__geo_interface__,
                 "properties": {"Class": row.get("Class")}
-            }
+                }
 
             folium.GeoJson(
             data=geojson_dict,
