@@ -73,13 +73,66 @@ st.markdown(
     
 st.markdown("<br><br> ", unsafe_allow_html=True)
     
-st.markdown('<div class="subtitle">a: School of Technology at Universidade Estadual de Campinas, Limeira, Brazil</div>', unsafe_allow_html=True)
-st.markdown('<div class="subtitle">b: Department of Meteorology and Atmospheric Science, Pennsylvania State University, Pennsylvania, United States</div>', unsafe_allow_html=True)
-st.markdown('<div class="subtitle">c: Department of Earth, Environmental and Planetary Sciences Department, Rice University, Houston, United States </div>', unsafe_allow_html=True)
-st.markdown('<div class="subtitle">d: School of Engineering, Universidade de São Paulo, São Carlos, Brazil</div>', unsafe_allow_html=True)
-st.markdown('<div class="subtitle">e: School of Engineering, Universidade Federal de Mato Grosso do Sul, Campo Grande, Brazil</div>', unsafe_allow_html=True)
-st.markdown('<div class="subtitle">f: Zachry Department of Civil and Environmental Engineering; Texas A&M University, College Station, United States</div>', unsafe_allow_html=True)  
-    
+st.markdown("""
+<div style="text-align:center; margin-top:20px;">
+
+    <!-- a -->
+    <div class="subtitle" style="margin-bottom:10px;">
+        <sup>a</sup>
+        <a href="https://www.ft.unicamp.br/" target="_blank">
+            <img src="https://upload.wikimedia.org/wikipedia/pt/thumb/b/b2/UNICAMP_logo.svg/966px-UNICAMP_logo.svg.png" 
+                 style="height:45px; vertical-align:middle; margin-left:6px;">
+        </a>
+    </div>
+
+    <!-- b -->
+    <div class="subtitle" style="margin-bottom:10px;">
+        <sup>b</sup>
+        <a href="https://www.met.psu.edu/" target="_blank">
+            <img src="https://brand.psu.edu/images/backgrounds/veritcal-1-mark_registered.png" 
+                 style="height:45px; vertical-align:middle; margin-left:6px;">
+        </a>
+    </div>
+
+    <!-- c -->
+    <div class="subtitle" style="margin-bottom:10px;">
+        <sup>c</sup>
+        <a href="LINK_RICE_AQUI" target="_blank">
+            <img src="CAMINHO_LOGO_RICE_AQUI" 
+                 style="height:45px; vertical-align:middle; margin-left:6px;">
+        </a>
+    </div>
+
+    <!-- d -->
+    <div class="subtitle" style="margin-bottom:10px;">
+        <sup>d</sup>
+        <a href="LINK_USP_AQUI" target="_blank">
+            <img src="CAMINHO_LOGO_USP_AQUI" 
+                 style="height:45px; vertical-align:middle; margin-left:6px;">
+        </a>
+    </div>
+
+    <!-- e -->
+    <div class="subtitle" style="margin-bottom:10px;">
+        <sup>e</sup>
+        <a href="LINK_UFMS_AQUI" target="_blank">
+            <img src="CAMINHO_LOGO_UFMS_AQUI" 
+                 style="height:45px; vertical-align:middle; margin-left:6px;">
+        </a>
+    </div>
+
+    <!-- f -->
+    <div class="subtitle" style="margin-bottom:10px;">
+        <sup>f</sup>
+        <a href="LINK_TAMU_AQUI" target="_blank">
+            <img src="CAMINHO_LOGO_TAMU_AQUI" 
+                 style="height:45px; vertical-align:middle; margin-left:6px;">
+        </a>
+    </div>
+
+</div>
+""", unsafe_allow_html=True)
+
 st.markdown("<br> ", unsafe_allow_html=True)
     
     
@@ -107,6 +160,7 @@ st.markdown('<div class="legend"> Comparison between slow-onset (a) and flash (b
 st.image("images/Sudden decline in soil moisture in a few days.png")
         
     
+
 
 
 
