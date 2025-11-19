@@ -39,8 +39,8 @@ with tab1:
     
     escalas = st.selectbox(
         "Select scale:",
-        options=opcoes_escalas,
-        index=default_index
+        options=sorted(gdf['Escala de abrangência'].unique()),
+        index=0
         )
         
     gdf_filtrado = gdf[
