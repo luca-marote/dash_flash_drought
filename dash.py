@@ -72,14 +72,17 @@ st.markdown(
     #AFILIAÇÕES
     
 st.markdown("<br><br> ", unsafe_allow_html=True)
-    
+
+IMG_SIZE = 70       
+INDEX_SIZE = 16     
+
 st.markdown("""
 <div style="text-align:center; margin-top:20px; display:flex; justify-content:center; gap:22px; align-items:center; flex-wrap:wrap;">
 
   <div style="text-align:center;">
-    <div style="font-size:12px;"><sup>a</sup></div>
+    <div style="font-size:16px;"><sup>a</sup></div>
     <a href="https://www.ft.unicamp.br/" target="_blank" rel="noopener noreferrer">
-      <img src="https://upload.wikimedia.org/wikipedia/pt/thumb/b/b2/UNICAMP_logo.svg/966px-UNICAMP_logo.svg.png" style="height:45px; display:block; margin:4px auto;">
+      <img src="https://upload.wikimedia.org/wikipedia/pt/thumb/b/b2/UNICAMP_logo.svg/966px-UNICAMP_logo.svg.png" style="height:90px; display:block; margin:4px auto;">
     </a>
   </div>
 
@@ -148,6 +151,7 @@ st.markdown('<div class="legend"> Comparison between slow-onset (a) and flash (b
 st.image("images/Sudden decline in soil moisture in a few days.png")
         
     
+
 
 
 
