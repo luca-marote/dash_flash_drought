@@ -32,10 +32,6 @@ with tab1:
         max_value=ano_max,
         value=(ano_min, ano_max)  # valores iniciais
         )
-
-    opcoes_escalas = sorted(gdf['Escala de abrangência'].unique())
-    default = 'Local'
-    default_index = opcoes_escalas.index(default)
     
     escalas = st.selectbox(
         "Select scale:",
