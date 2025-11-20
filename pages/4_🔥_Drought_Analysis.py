@@ -279,7 +279,7 @@ fig_d = go.Figure(data=[
 ])
     
 fig_d.update_layout(**PADRAO_LAYOUT)
-fig_d.update_layout(legend=PADRAO_LEGENDA)
+#fig_d.update_layout(legend=PADRAO_LEGENDA)
 fig_d.update_layout(**PADRAO_TEXTO) 
 
 with tab2:
