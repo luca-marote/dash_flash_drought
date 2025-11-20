@@ -153,6 +153,34 @@ with tab1:
         st_folium(m, width=1200, height=600)
 
 
+
+PADRAO_LAYOUT = dict(
+    showlegend=True,
+    margin=dict(t=40, b=40, l=40, r=40),
+    width=1000,  # Padronizado para o valor de fig_a
+    height=1000
+)
+
+# 2. Configuração padrão de legenda (baseada em fig_a)
+PADRAO_LEGENDA = dict(
+    title_text="Indicators",
+    orientation="v",
+    y=1.05,  # Posição y de fig_a
+    x=0.9,   # Posição x de fig_a
+    bordercolor="white",
+    borderwidth=2,
+    font=dict(
+        family="Open Sans",
+        size=20,
+        color="DarkSlateGrey"
+    )
+)
+
+PADRAO_TEXTO = dict(
+    uniformtext_minsize=12, 
+    uniformtext_mode='hide'
+)
+
 valores_a = [66, 41, 36, 25, 15, 3]
 cores_a   = ['#1f77b4', '#8c564b', '#ff7f0e', '#2ca02c', '#969696', '#756bb1']
 
@@ -178,33 +206,9 @@ fig_a = go.Figure(data=[
     )
 ])
     
-    
-fig_a.update_layout(
-    uniformtext_minsize=12, 
-    uniformtext_mode='hide'
-)
-
-fig_a.update_layout(
-        showlegend=True,
-        margin=dict(t=40, b=40, l=40, r=40),
-        width=1200,
-        height=1000)
-
-fig_a.update_layout(
-    legend=dict(
-        title_text="Indicators", 
-        orientation="v",      
-        y=1.05,                 
-        x=0.9,                     
-        bordercolor="white",    
-        borderwidth=2,          
-        font=dict(
-            family="Open Sans",
-            size=20,
-            color="DarkSlateGrey"
-        )
-    )
-)
+fig_a.update_layout(**PADRAO_LAYOUT)
+fig_a.update_layout(legend=PADRAO_LEGENDA)
+fig_a.update_layout(**PADRAO_TEXTO) 
 
 valores_b = [46, 40, 20, 19, 9]
 cores_b   = ['#1f77b4', '#8c564b', '#ff7f0e', '#2ca02c', '#969696']
@@ -227,33 +231,9 @@ fig_b = go.Figure(data=[
     )
 ])
     
-    
-fig_b.update_layout(
-    uniformtext_minsize=12, 
-    uniformtext_mode='hide'
-)
-
-fig_b.update_layout(
-        showlegend=True,
-        margin=dict(t=40, b=40, l=40, r=40),
-        width=1000,
-        height=1000)
-
-fig_b.update_layout(
-    legend=dict(
-        title_text="Indicators",
-        orientation="v",        
-        y=1.05,               
-        x=0.7,                   
-        bordercolor="white",   
-        borderwidth=2,       
-        font=dict(
-            family="Open Sans",
-            size=20,
-            color="DarkSlateGrey"
-        )
-    )
-)
+fig_b.update_layout(**PADRAO_LAYOUT)
+fig_b.update_layout(legend=PADRAO_LEGENDA)
+fig_b.update_layout(**PADRAO_TEXTO) 
 
 valores_c = [23, 8, 15, 11, 3]
 cores_c   = ['#1f77b4', '#8c564b', '#ff7f0e', '#2ca02c', '#756bb1']
@@ -275,33 +255,10 @@ fig_c = go.Figure(data=[
         )
     )
 ])
-    
-fig_c.update_layout(
-    uniformtext_minsize=12, 
-    uniformtext_mode='hide'
-)
 
-fig_c.update_layout(
-        showlegend=True,
-        margin=dict(t=40, b=40, l=40, r=40),
-        width=1000,
-        height=1000)
-
-fig_c.update_layout(
-    legend=dict(
-        title_text="Indicators",  
-        orientation="v",         
-        y=1.05,                  
-        x=0.7,                   
-        bordercolor="white",     
-        borderwidth=2,           
-        font=dict(
-            family="Open Sans",
-            size=20,
-            color="DarkSlateGrey"
-        )
-    )
-)
+fig_c.update_layout(**PADRAO_LAYOUT)
+fig_c.update_layout(legend=PADRAO_LEGENDA)
+fig_c.update_layout(**PADRAO_TEXTO) 
 
 valores_d = [4, 3, 2]
 cores_d   = ['#1f77b4', '#2ca02c', '#8c564b']
@@ -324,36 +281,9 @@ fig_d = go.Figure(data=[
     )
 ])
     
-    
-fig_d.update_layout(
-    # Garante o formato de círculo perfeito
-    uniformtext_minsize=12, 
-    uniformtext_mode='hide'
-)
-
-fig_d.update_layout(
-        showlegend=True,
-        margin=dict(t=100, b=40, l=40, r=40),
-        width=1000,
-        height=1000)
-
-fig_d.update_layout(
-    legend=dict(
-        title_text="Indicators",  # Legend title
-        orientation="v",         # Horizontal orientation
-        y=1.15,                  # Position relative to plot area (paper coordinates)
-        x=0.7,                     # Position relative to plot area
-        bordercolor="white",      # Border color
-        borderwidth=2,            # Border width
-        font=dict(
-            family="Open Sans",
-            size=20,
-            color="DarkSlateGrey"
-        )
-    )
-)
-
-
+fig_d.update_layout(**PADRAO_LAYOUT)
+fig_d.update_layout(legend=PADRAO_LEGENDA)
+fig_d.update_layout(**PADRAO_TEXTO) 
 
 with tab2:
         
