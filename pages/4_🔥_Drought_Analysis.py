@@ -167,7 +167,7 @@ PADRAO_LAYOUT = dict(
 PADRAO_LEGENDA = dict(
     title_text="Indicators",
     orientation="v",
-    y=-0.2,  # Posição y de fig_a
+    y=0.2,  # Posição y de fig_a
     x=0.5,   # Posição x de fig_a
     bordercolor="white",
     borderwidth=2,
@@ -274,11 +274,11 @@ fig_d.update_layout(**PADRAO_LAYOUT)
 
 master_legend_figure = go.Figure(data=[
     go.Pie(
-        values=valores_a, # Dados para definir os rótulos
+        values=valores_a, 
         labels=rotulos,
-        marker=dict(colors=cores_a),
-        hovertemplate="<extra></extra>", # Remove interatividade
-        visible=False # ⬅️ Oculta o gráfico de pizza, mantendo apenas a legenda
+        marker=dict(colors=cores),
+        hovertemplate="<extra></extra>", 
+        visible=False 
     )
 ])
 
