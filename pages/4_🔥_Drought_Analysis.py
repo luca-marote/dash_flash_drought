@@ -8,7 +8,8 @@ from folium.elements import Element
 import geopandas as gpd
 from shapely.geometry import Point, Polygon, MultiPolygon
 from folium.plugins import MarkerCluster
-
+import plotly.graph_objects as go
+import plotly.express as px
 
 st.header("🌡️ Drought Analysis")  # anchor removido
     
@@ -46,14 +47,16 @@ with tab1:
     (gdf['Ano de publicação'] <= anos[1])
         ]
 
-    # 2. Modifica a lógica de filtragem para ignorar o filtro se 'All' for selecionado.
-    if escalas != 'All': 
-        gdf_filtrado = gdf_filtrado[gdf_filtrado['Escala de abrangência'] == escalas]
+    
     escalas = st.selectbox(
         "Select scale:",
         options=sorted(gdf['Escala de abrangência'].unique())
         )
-        
+
+    # 2. Modifica a lógica de filtragem para ignorar o filtro se 'All' for selecionado.
+    if escalas != 'All': 
+        gdf_filtrado = gdf_filtrado[gdf_filtrado['Escala de abrangência'] == escalas]
+    
 
     # --- Criar mapa dinâmico ---
     m = folium.Map(location=[-14, -52], zoom_start=4, tiles='cartodb positron')
@@ -148,3 +151,224 @@ with tab1:
         m.get_root().html.add_child(Element(legend_html))
     # --- Exibir mapa no dashboard ---
         st_folium(m, width=1200, height=600)
+
+
+valores_a = [66, 41, 36, 25, 15, 3]
+cores_a   = ['#1f77b4', '#8c564b', '#ff7f0e', '#2ca02c', '#969696', '#756bb1']
+
+rotulos = ['Vegetation and Productivity Index', 'Vegetation Stress Indicators',
+               'Indicators based on Soil Moisture', 'Indicators based on Precipitation and Evapotranspiration',
+               'Hydrological', 'Others']
+
+fig_a = go.Figure(data=[
+    go.Pie(
+        values=valores_a,
+        labels=rotulos,
+        marker=dict(colors=cores_a),
+        direction='counterclockwise',
+        sort=False,
+        hovertemplate="Number of papers: %{value}<extra></extra>", 
+        textinfo='percent',  
+        insidetextorientation='horizontal',
+        textfont=dict(
+            family="Source Sans", 
+            size=22,                    
+            color="black"        
+        )
+    )
+])
+    
+    
+fig_a.update_layout(
+    uniformtext_minsize=12, 
+    uniformtext_mode='hide'
+)
+
+fig_a.update_layout(
+        showlegend=True,
+        margin=dict(t=40, b=40, l=40, r=40),
+        width=1200,
+        height=1000)
+
+fig_a.update_layout(
+    legend=dict(
+        title_text="Indicators", 
+        orientation="v",      
+        y=1.05,                 
+        x=0.9,                     
+        bordercolor="white",    
+        borderwidth=2,          
+        font=dict(
+            family="Open Sans",
+            size=20,
+            color="DarkSlateGrey"
+        )
+    )
+)
+
+valores_b = [46, 40, 20, 19, 9]
+cores_b   = ['#1f77b4', '#8c564b', '#ff7f0e', '#2ca02c', '#969696']
+
+fig_b = go.Figure(data=[
+    go.Pie(
+        values=valores_b,
+        labels=rotulos,
+        marker=dict(colors=cores_b),
+        direction='counterclockwise',
+        sort=False,
+        hovertemplate="Number of papers: %{value}<extra></extra>", 
+        textinfo='percent',      
+        insidetextorientation='horizontal',
+        textfont=dict(
+            family="Source Sans", 
+            size=22,                    
+            color="black"              
+        )
+    )
+])
+    
+    
+fig_b.update_layout(
+    uniformtext_minsize=12, 
+    uniformtext_mode='hide'
+)
+
+fig_b.update_layout(
+        showlegend=True,
+        margin=dict(t=40, b=40, l=40, r=40),
+        width=1000,
+        height=1000)
+
+fig_b.update_layout(
+    legend=dict(
+        title_text="Indicators",
+        orientation="v",        
+        y=1.05,               
+        x=0.7,                   
+        bordercolor="white",   
+        borderwidth=2,       
+        font=dict(
+            family="Open Sans",
+            size=20,
+            color="DarkSlateGrey"
+        )
+    )
+)
+
+valores_c = [23, 8, 15, 11, 3]
+cores_c   = ['#1f77b4', '#8c564b', '#ff7f0e', '#2ca02c', '#756bb1']
+
+fig_c = go.Figure(data=[
+    go.Pie(
+        values=valores_c,
+        labels=rotulos,
+        marker=dict(colors=cores_c),
+        direction='counterclockwise',
+        sort=False,
+        hovertemplate="Number of papers: %{value}<extra></extra>", 
+        textinfo='percent',        
+        insidetextorientation='horizontal',
+        textfont=dict(
+            family="Source Sans", 
+            size=22,                     
+            color="black"                
+        )
+    )
+])
+    
+fig_c.update_layout(
+    uniformtext_minsize=12, 
+    uniformtext_mode='hide'
+)
+
+fig_c.update_layout(
+        showlegend=True,
+        margin=dict(t=40, b=40, l=40, r=40),
+        width=1000,
+        height=1000)
+
+fig_c.update_layout(
+    legend=dict(
+        title_text="Indicators",  
+        orientation="v",         
+        y=1.05,                  
+        x=0.7,                   
+        bordercolor="white",     
+        borderwidth=2,           
+        font=dict(
+            family="Open Sans",
+            size=20,
+            color="DarkSlateGrey"
+        )
+    )
+)
+
+valores_d = [4, 3, 2]
+cores_d   = ['#1f77b4', '#2ca02c', '#8c564b']
+
+fig_d = go.Figure(data=[
+    go.Pie(
+        values=valores_d,
+        labels=rotulos,
+        marker=dict(colors=cores_d),
+        direction='counterclockwise',
+        sort=False,
+        hovertemplate="Number of papers: %{value}<extra></extra>", # Mostra rótulo, % e valor
+        textinfo='percent',        # Informação visível no slice
+        insidetextorientation='horizontal',
+        textfont=dict(
+            family="Source Sans", # Nome da fonte e fallback
+            size=22,                     # Tamanho da fonte
+            color="black"                # Cor da fonte
+        )
+    )
+])
+    
+    
+fig_d.update_layout(
+    # Garante o formato de círculo perfeito
+    uniformtext_minsize=12, 
+    uniformtext_mode='hide'
+)
+
+fig_d.update_layout(
+        showlegend=True,
+        margin=dict(t=100, b=40, l=40, r=40),
+        width=1000,
+        height=1000)
+
+fig_d.update_layout(
+    legend=dict(
+        title_text="Indicators",  # Legend title
+        orientation="v",         # Horizontal orientation
+        y=1.15,                  # Position relative to plot area (paper coordinates)
+        x=0.7,                     # Position relative to plot area
+        bordercolor="white",      # Border color
+        borderwidth=2,            # Border width
+        font=dict(
+            family="Open Sans",
+            size=20,
+            color="DarkSlateGrey"
+        )
+    )
+)
+
+
+
+with tab2:
+        
+    options = ['Global dataset indicators',
+               'Flash drought indicators',
+               'Brazilian drought indicators',
+               'Brazilian flash drought']
+    
+    escalas = st.selectbox(
+        "Select option:",
+        options=options, 
+        index=0
+        )
+        
+
+    
+    
+    
