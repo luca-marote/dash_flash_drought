@@ -287,13 +287,9 @@ with tab2:
     
     col1, col2 = st.columns(2)
     
-    options = ['Global dataset',
-               'Brazilian subset']
+    options = ['Global dataset', 'Brazilian subset']
 
-     select_option = st.selectbox(
-         "Select option:",
-         options=options, 
-         index=0)
+    select_option = st.selectbox("Select option:", options=options, index=0)
 
     with col1:
        
