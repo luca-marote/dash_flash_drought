@@ -154,11 +154,13 @@ with tab1:
 
 
 
-PADRAO_LAYOUT = dict(
-    showlegend=False
+PADRAO_LAYOUT_COMPLETO = dict(
+    showlegend=True,
+    # Remova width, e use apenas a altura desejada
+    height=500,  # ⬅️ Reduza a altura se 1000px for muito alto para a coluna
     margin=dict(t=40, b=40, l=40, r=40),
-    height=1500
-    width
+    uniformtext_minsize=12, 
+    uniformtext_mode='hide'
 )
 
 # 2. Configuração padrão de legenda (baseada em fig_a)
@@ -176,10 +178,6 @@ PADRAO_LEGENDA = dict(
     )
 )
 
-PADRAO_TEXTO = dict(
-    uniformtext_minsize=12, 
-    uniformtext_mode='hide'
-)
 
 valores_a = [66, 41, 36, 25, 15, 3]
 cores   = ['#1f77b4', '#8c564b', '#ff7f0e', '#2ca02c', '#969696', '#756bb1']
@@ -206,9 +204,8 @@ fig_a = go.Figure(data=[
     )
 ])
     
-fig_a.update_layout(**PADRAO_LAYOUT)
-#fig_a.update_layout(legend=PADRAO_LEGENDA)
-fig_a.update_layout(**PADRAO_TEXTO) 
+fig_a.update_layout(**PADRAO_LAYOUT, legend=PADRAO_LEGENDA)
+
 
 valores_b = [46, 40, 20, 19, 9, 0]
 
@@ -229,10 +226,8 @@ fig_b = go.Figure(data=[
         )
     )
 ])
-    
-fig_b.update_layout(**PADRAO_LAYOUT)
-#fig_b.update_layout(legend=PADRAO_LEGENDA)
-fig_b.update_layout(**PADRAO_TEXTO) 
+
+fig_b.update_layout(**PADRAO_LAYOUT, legend=PADRAO_LEGENDA)
 
 valores_c = [23, 8, 15, 11, 3, 0]
 
@@ -254,9 +249,7 @@ fig_c = go.Figure(data=[
     )
 ])
 
-fig_c.update_layout(**PADRAO_LAYOUT)
-#fig_c.update_layout(legend=PADRAO_LEGENDA)
-fig_c.update_layout(**PADRAO_TEXTO) 
+fig_c.update_layout(**PADRAO_LAYOUT, legend=PADRAO_LEGENDA)
 
 valores_d = [4, 3, 2, 0, 0, 0]
 
@@ -277,10 +270,8 @@ fig_d = go.Figure(data=[
         )
     )
 ])
-    
-fig_d.update_layout(**PADRAO_LAYOUT)
-#fig_d.update_layout(legend=PADRAO_LEGENDA)
-fig_d.update_layout(**PADRAO_TEXTO) 
+
+fig_d.update_layout(**PADRAO_LAYOUT, legend=PADRAO_LEGENDA)
 
 with tab2:
     options = ['Global dataset', 'Brazilian subset']
