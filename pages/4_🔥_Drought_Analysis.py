@@ -155,8 +155,10 @@ with tab1:
 
 
 PADRAO_LAYOUT = dict(
+    show_legend=False
     margin=dict(t=40, b=40, l=40, r=40),
     height=1500
+    width
 )
 
 # 2. Configuração padrão de legenda (baseada em fig_a)
@@ -169,7 +171,7 @@ PADRAO_LEGENDA = dict(
     borderwidth=2,
     font=dict(
         family="Sans Serif",
-        size=14,
+        size=12,
         color="DarkSlateGrey"
     )
 )
