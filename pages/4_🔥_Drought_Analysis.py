@@ -291,6 +291,17 @@ master_legend_figure.update_layout(
     paper_bgcolor='rgba(0,0,0,0)'
 )
 
+st.markdown("""
+    <style>
+        .title {
+            font-size: 40px;
+            font-weight: 700;
+            text-align: center;
+            color: #382626;
+            margin-bottom: 20px;
+        <style>
+    """)
+
 with tab2:
     options = ['Global dataset', 'Brazilian subset']
 
