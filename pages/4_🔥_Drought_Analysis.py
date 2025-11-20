@@ -284,16 +284,16 @@ fig_d.update_layout(legend=PADRAO_LEGENDA)
 fig_d.update_layout(**PADRAO_TEXTO) 
 
 with tab2:
+    
     col1, col2 = st.columns(2)
     
     options = ['Global dataset',
                'Brazilian subset']
 
      select_option = st.selectbox(
-            "Select option:",
-            options=options, 
-            index=0
-            )
+         "Select option:",
+         options=options, 
+         index=0)
 
     with col1:
        
