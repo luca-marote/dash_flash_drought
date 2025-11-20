@@ -156,8 +156,7 @@ with tab1:
 
 PADRAO_LAYOUT = dict(
     showlegend=False,
-    # Remova width, e use apenas a altura desejada
-    height=500,  # ⬅️ Reduza a altura se 1000px for muito alto para a coluna
+    height=600,  
     margin=dict(t=40, b=40, l=40, r=40),
     uniformtext_minsize=12, 
     uniformtext_mode='hide'
@@ -274,7 +273,7 @@ fig_d.update_layout(**PADRAO_LAYOUT)
 
 master_legend_figure = go.Figure(data=[
     go.Pie(
-        values=valores_d, 
+        values=valores_b, 
         labels=rotulos,
         marker=dict(colors=cores),
         hovertemplate="<extra></extra>",
@@ -307,13 +306,13 @@ with tab2:
     options = ['Global dataset', 'Brazilian subset']
 
     select_option = st.selectbox("Select option:", options=options, index=0)
-    st.plotly_chart(master_legend_figure, use_container_width=True)
+    
     col1, col2 = st.columns(2)
     
     with col1:
         
         st.markdown("<br><br> ", unsafe_allow_html=True)
-        
+        st.markdown('<div class="title">Drought and Flash Drought Indicators </div>', unsafe_allow_html=True)
        
         if select_option=='Global dataset':
             st.plotly_chart(fig_a, use_container_width=True)
@@ -332,5 +331,7 @@ with tab2:
 
         elif select_option=='Brazilian subset':
             st.plotly_chart(fig_d, use_container_width=True)
+
+        st.plotly_chart(master_legend_figure, use_container_width=True)
             
-        st.markdown('<div class="title">Drought and Flash Drought Indicators </div>', unsafe_allow_html=True)
+       
