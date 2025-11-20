@@ -165,10 +165,10 @@ PADRAO_LAYOUT = dict(
 
 # 2. Configuração padrão de legenda (baseada em fig_a)
 PADRAO_LEGENDA = dict(
-    title_text="Indicators",
+    title_text=dict(text="Indicators", fontsize=18)
     orientation="v",
-    x=0.2, 
-    y=0.2,
+    x=0.3, 
+    y=0.25,
     bordercolor="white",
     borderwidth=2,
     font=dict(
