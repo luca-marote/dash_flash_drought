@@ -294,7 +294,7 @@ master_legend_figure.update_layout(
 st.markdown("""
     <style>
         .title {
-            font-size: 18px;
+            font-size: 22px;
             font-weight: 700;
             text-align: center;
             color: #1a1a1a;
