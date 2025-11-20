@@ -299,6 +299,8 @@ with tab2:
     col1, col2 = st.columns(2)
     
     with col1:
+
+        st.subheader("Drought and Flash Drought Indicators")
        
         if select_option=='Global dataset':
             st.plotly_chart(fig_a, use_container_width=True)
@@ -308,7 +310,9 @@ with tab2:
 
 
     with col2:
-    
+
+        st.subheader("Flash Drought Indicators")
+
         if select_option=='Global dataset':
             st.plotly_chart(fig_b, use_container_width=True)
 
