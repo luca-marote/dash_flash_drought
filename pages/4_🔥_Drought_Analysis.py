@@ -303,10 +303,11 @@ st.markdown("""
 
 
 with tab2:
+
     options = ['Global dataset', 'Brazilian subset']
 
     select_option = st.selectbox("Select option:", options=options, index=0)
-    
+    st.plotly_chart(master_legend_figure, use_container_width=True)
     col1, col2 = st.columns(2)
     
     with col1:
@@ -333,4 +334,4 @@ with tab2:
             st.plotly_chart(fig_d, use_container_width=True)
 
 
-    st.plotly_chart(master_legend_figure, use_container_width=True)
+    
