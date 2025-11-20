@@ -362,21 +362,21 @@ with tab2:
                'Brazilian drought indicators',
                'Brazilian flash drought']
     
-    escalas = st.selectbox(
+    select_option = st.selectbox(
         "Select option:",
         options=options, 
         index=0
         )
         
 
-    if options==['Global dataset indicators']:
+    if select_option==['Global dataset indicators']:
         st.plotly_chart(fig_a, use_container_width=True)
 
-    if options==['Flash drought indicators']:
+    if select_option==['Flash drought indicators']:
         st.plotly_chart(fig_b, use_container_width=True)
                  
-    if options==['Brazilian drought indicators']:
+    if select_option==['Brazilian drought indicators']:
         st.plotly_chart(fig_c, use_container_width=True)
 
-    if options==['Brazilian drought indicators']:
+    if select_option==['Brazilian flash drought']:
         st.plotly_chart(fig_d, use_container_width=True)
