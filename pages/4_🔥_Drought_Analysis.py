@@ -167,7 +167,7 @@ PADRAO_LAYOUT = dict(
 PADRAO_LEGENDA = dict(
     title_text="Indicators",
     orientation="v",
-    x=0.3, 
+    x=0, 
     y=0.25,
     bordercolor="white",
     borderwidth=2,
@@ -313,7 +313,7 @@ with tab2:
     with col1:
         
         st.markdown("<br><br> ", unsafe_allow_html=True)
-        st.markdown('<div class="title">Drought and Flash Drought Indicators </div>', unsafe_allow_html=True)
+        
        
         if select_option=='Global dataset':
             st.plotly_chart(fig_a, use_container_width=True)
@@ -332,6 +332,5 @@ with tab2:
 
         elif select_option=='Brazilian subset':
             st.plotly_chart(fig_d, use_container_width=True)
-
-
-    
+            
+        st.markdown('<div class="title">Drought and Flash Drought Indicators </div>', unsafe_allow_html=True)
