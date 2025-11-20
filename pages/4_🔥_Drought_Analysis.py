@@ -299,8 +299,9 @@ with tab2:
     col1, col2 = st.columns(2)
     
     with col1:
+        
 
-       st.write("Drought and Flash Drought Indicators")
+        st.write("Drought and Flash Drought Indicators")
        
         if select_option=='Global dataset':
             st.plotly_chart(fig_a, use_container_width=True)
