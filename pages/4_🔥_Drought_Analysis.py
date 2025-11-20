@@ -369,14 +369,14 @@ with tab2:
         )
         
 
-    if select_option==['Global dataset indicators']:
+    if select_option=='Global dataset indicators':
         st.plotly_chart(fig_a, use_container_width=True)
 
-    elif select_option==['Flash drought indicators']:
+    elif select_option=='Flash drought indicators':
         st.plotly_chart(fig_b, use_container_width=True)
                  
-    elif select_option==['Brazilian drought indicators']:
+    elif select_option=='Brazilian drought indicators':
         st.plotly_chart(fig_c, use_container_width=True)
 
-    elif select_option==['Brazilian flash drought']:
+    elif select_option=='Brazilian flash drought':
         st.plotly_chart(fig_d, use_container_width=True)
