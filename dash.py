@@ -13,6 +13,8 @@ st.set_page_config(
     layout="wide",
      )
 
+hsj_logo = "https://www.tandfonline.com/journals/thsj20"
+st.sidebar.image(hsj_logo, use_column_width=True)
 
 # Estilo CSS personalizado
 st.markdown("""
@@ -149,6 +151,7 @@ st.markdown('<div class="legend"> Comparison between slow-onset (a) and flash (b
 st.image("images/Sudden decline in soil moisture in a few days.png")
         
     
+
 
 
 
