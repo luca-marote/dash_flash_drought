@@ -155,7 +155,7 @@ with tab1:
 
 
 PADRAO_LAYOUT = dict(
-    showlegend=True,
+    showlegend=False,
     # Remova width, e use apenas a altura desejada
     height=500,  # ⬅️ Reduza a altura se 1000px for muito alto para a coluna
     margin=dict(t=40, b=40, l=40, r=40),
@@ -173,11 +173,10 @@ PADRAO_LEGENDA = dict(
     borderwidth=2,
     font=dict(
         family="Sans Serif",
-        size=12,
+        size=14,
         color="DarkSlateGrey"
     )
 )
-
 
 valores_a = [66, 41, 36, 25, 15, 3]
 cores   = ['#1f77b4', '#8c564b', '#ff7f0e', '#2ca02c', '#969696', '#756bb1']
@@ -204,7 +203,7 @@ fig_a = go.Figure(data=[
     )
 ])
     
-fig_a.update_layout(**PADRAO_LAYOUT, legend=PADRAO_LEGENDA)
+fig_a.update_layout(**PADRAO_LAYOUT)
 
 
 valores_b = [46, 40, 20, 19, 9, 0]
@@ -227,7 +226,7 @@ fig_b = go.Figure(data=[
     )
 ])
 
-fig_b.update_layout(**PADRAO_LAYOUT, legend=PADRAO_LEGENDA)
+fig_b.update_layout(**PADRAO_LAYOUT)
 
 valores_c = [23, 8, 15, 11, 3, 0]
 
@@ -249,7 +248,7 @@ fig_c = go.Figure(data=[
     )
 ])
 
-fig_c.update_layout(**PADRAO_LAYOUT, legend=PADRAO_LEGENDA)
+fig_c.update_layout(**PADRAO_LAYOUT)
 
 valores_d = [4, 3, 2, 0, 0, 0]
 
@@ -271,7 +270,26 @@ fig_d = go.Figure(data=[
     )
 ])
 
-fig_d.update_layout(**PADRAO_LAYOUT, legend=PADRAO_LEGENDA)
+fig_d.update_layout(**PADRAO_LAYOUT)
+
+master_legend_figure = go.Figure(data=[
+    go.Pie(
+        values=valores_a, # Dados para definir os rótulos
+        labels=rotulos,
+        marker=dict(colors=cores_a),
+        hovertemplate="<extra></extra>", # Remove interatividade
+        visible=False # ⬅️ Oculta o gráfico de pizza, mantendo apenas a legenda
+    )
+])
+
+master_legend_figure.update_layout(
+    showlegend=True, 
+    legend=PADRAO_LEGENDA,
+    height=80,      
+    margin=dict(t=0, b=0, l=0, r=0),
+    plot_bgcolor='rgba(0,0,0,0)',
+    paper_bgcolor='rgba(0,0,0,0)'
+)
 
 with tab2:
     options = ['Global dataset', 'Brazilian subset']
@@ -296,3 +314,6 @@ with tab2:
 
         elif select_option=='Brazilian subset':
             st.plotly_chart(fig_d, use_container_width=True)
+
+
+    st.plotly_chart(master_legend_figure, use_container_width=True)
