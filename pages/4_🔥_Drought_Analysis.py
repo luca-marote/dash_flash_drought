@@ -155,8 +155,7 @@ with tab1:
 
 
 PADRAO_LAYOUT = dict(
-    showlegend=False,
-    height=600,  
+    showlegend=False, 
     margin=dict(t=40, b=40, l=40, r=40),
     uniformtext_minsize=12, 
     uniformtext_mode='hide'
@@ -273,11 +272,11 @@ fig_d.update_layout(**PADRAO_LAYOUT)
 
 master_legend_figure = go.Figure(data=[
     go.Pie(
-        values=valores_b, 
+        values=valores_d, 
         labels=rotulos,
         marker=dict(colors=cores),
         hovertemplate="<extra></extra>",
-        domain={'x': [0, 0.00001], 'y': [0, 0.00001]}
+        domain={'x': [0, 0.0001], 'y': [0, 0.0001]}
     )
 ])
 
