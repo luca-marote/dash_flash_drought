@@ -182,7 +182,7 @@ PADRAO_TEXTO = dict(
 )
 
 valores_a = [66, 41, 36, 25, 15, 3]
-cores_a   = ['#1f77b4', '#8c564b', '#ff7f0e', '#2ca02c', '#969696', '#756bb1']
+cores   = ['#1f77b4', '#8c564b', '#ff7f0e', '#2ca02c', '#969696', '#756bb1']
 
 rotulos = ['Vegetation and Productivity Index', 'Vegetation Stress Indicators',
                'Indicators based on Soil Moisture', 'Indicators based on Precipitation and Evapotranspiration',
@@ -192,7 +192,7 @@ fig_a = go.Figure(data=[
     go.Pie(
         values=valores_a,
         labels=rotulos,
-        marker=dict(colors=cores_a),
+        marker=dict(colors=cores),
         direction='counterclockwise',
         sort=False,
         hovertemplate="Number of papers: %{value}<extra></extra>", 
@@ -211,13 +211,12 @@ fig_a.update_layout(legend=PADRAO_LEGENDA)
 fig_a.update_layout(**PADRAO_TEXTO) 
 
 valores_b = [46, 40, 20, 19, 9, 0]
-cores_b   = ['#1f77b4', '#8c564b', '#ff7f0e', '#2ca02c', '#969696']
 
 fig_b = go.Figure(data=[
     go.Pie(
         values=valores_b,
         labels=rotulos,
-        marker=dict(colors=cores_b),
+        marker=dict(colors=cores),
         direction='counterclockwise',
         sort=False,
         hovertemplate="Number of papers: %{value}<extra></extra>", 
@@ -236,13 +235,12 @@ fig_b.update_layout(legend=PADRAO_LEGENDA)
 fig_b.update_layout(**PADRAO_TEXTO) 
 
 valores_c = [23, 8, 15, 11, 3, 0]
-cores_c   = ['#1f77b4', '#8c564b', '#ff7f0e', '#2ca02c', '#756bb1']
 
 fig_c = go.Figure(data=[
     go.Pie(
         values=valores_c,
         labels=rotulos,
-        marker=dict(colors=cores_c),
+        marker=dict(colors=cores),
         direction='counterclockwise',
         sort=False,
         hovertemplate="Number of papers: %{value}<extra></extra>", 
@@ -261,13 +259,12 @@ fig_c.update_layout(legend=PADRAO_LEGENDA)
 fig_c.update_layout(**PADRAO_TEXTO) 
 
 valores_d = [4, 3, 2, 0, 0, 0]
-cores_d   = ['#1f77b4', '#2ca02c', '#8c564b']
 
 fig_d = go.Figure(data=[
     go.Pie(
         values=valores_d,
         labels=rotulos,
-        marker=dict(colors=cores_d),
+        marker=dict(colors=cores),
         direction='counterclockwise',
         sort=False,
         hovertemplate="Number of papers: %{value}<extra></extra>", # Mostra rótulo, % e valor
