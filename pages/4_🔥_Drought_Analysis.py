@@ -171,7 +171,7 @@ PADRAO_LEGENDA = dict(
     borderwidth=2,
     font=dict(
         family="Open Sans",
-        size=20,
+        size=16,
         color="DarkSlateGrey"
     )
 )
