@@ -157,7 +157,7 @@ with tab1:
 PADRAO_LAYOUT = dict(
     showlegend=False,
     # Remova width, e use apenas a altura desejada
-    height=750,  # ⬅️ Reduza a altura se 1000px for muito alto para a coluna
+    height=500,  # ⬅️ Reduza a altura se 1000px for muito alto para a coluna
     margin=dict(t=40, b=40, l=40, r=40),
     uniformtext_minsize=12, 
     uniformtext_mode='hide'
@@ -167,8 +167,8 @@ PADRAO_LAYOUT = dict(
 PADRAO_LEGENDA = dict(
     title_text="Indicators",
     orientation="v",
-    x=0.5, 
-    y=0,
+    x=0.2, 
+    y=0.2,
     bordercolor="white",
     borderwidth=2,
     font=dict(
