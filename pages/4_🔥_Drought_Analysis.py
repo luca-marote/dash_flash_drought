@@ -157,8 +157,8 @@ with tab1:
 PADRAO_LAYOUT = dict(
     showlegend=True,
     margin=dict(t=40, b=40, l=40, r=40),
-    width=1000,  # Padronizado para o valor de fig_a
-    height=1000
+    width=600,  # Padronizado para o valor de fig_a
+    height=600
 )
 
 # 2. Configuração padrão de legenda (baseada em fig_a)
@@ -167,11 +167,10 @@ PADRAO_LEGENDA = dict(
     orientation="v",
     y=0,  # Posição y de fig_a
     x=0.5,   # Posição x de fig_a
-    
     bordercolor="white",
     borderwidth=2,
     font=dict(
-        family="Open Sans",
+        family="Sans Serif",
         size=14,
         color="DarkSlateGrey"
     )
@@ -186,8 +185,8 @@ valores_a = [66, 41, 36, 25, 15, 3]
 cores   = ['#1f77b4', '#8c564b', '#ff7f0e', '#2ca02c', '#969696', '#756bb1']
 
 rotulos = ['Vegetation and Productivity Index', 'Vegetation Stress Indicators',
-               'Indicators based on Soil Moisture', 'Indicators based on Precipitation and Evapotranspiration',
-               'Hydrological', 'Others']
+            'Indicators based on Soil Moisture', 'Indicators based on Precipitation and Evapotranspiration',
+            'Hydrological', 'Others']
 
 fig_a = go.Figure(data=[
     go.Pie(
