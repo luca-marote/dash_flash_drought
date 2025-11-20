@@ -294,11 +294,10 @@ master_legend_figure.update_layout(
 st.markdown("""
     <style>
         .title {
-            font-size: 28px;
+            font-size: 18px;
             font-weight: 700;
             text-align: center;
             color: #1a1a1a;
-            margin-bottom: 20px;
         <style>
         """, unsafe_allow_html=True)
 
