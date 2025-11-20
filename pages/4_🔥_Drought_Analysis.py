@@ -210,7 +210,7 @@ fig_a.update_layout(**PADRAO_LAYOUT)
 fig_a.update_layout(legend=PADRAO_LEGENDA)
 fig_a.update_layout(**PADRAO_TEXTO) 
 
-valores_b = [46, 40, 20, 19, 9]
+valores_b = [46, 40, 20, 19, 9, 0]
 cores_b   = ['#1f77b4', '#8c564b', '#ff7f0e', '#2ca02c', '#969696']
 
 fig_b = go.Figure(data=[
@@ -235,7 +235,7 @@ fig_b.update_layout(**PADRAO_LAYOUT)
 fig_b.update_layout(legend=PADRAO_LEGENDA)
 fig_b.update_layout(**PADRAO_TEXTO) 
 
-valores_c = [23, 8, 15, 11, 3]
+valores_c = [23, 8, 15, 11, 3, 0]
 cores_c   = ['#1f77b4', '#8c564b', '#ff7f0e', '#2ca02c', '#756bb1']
 
 fig_c = go.Figure(data=[
@@ -260,7 +260,7 @@ fig_c.update_layout(**PADRAO_LAYOUT)
 fig_c.update_layout(legend=PADRAO_LEGENDA)
 fig_c.update_layout(**PADRAO_TEXTO) 
 
-valores_d = [4, 3, 2]
+valores_d = [4, 3, 2, 0, 0, 0]
 cores_d   = ['#1f77b4', '#2ca02c', '#8c564b']
 
 fig_d = go.Figure(data=[
