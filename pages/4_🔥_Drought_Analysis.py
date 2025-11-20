@@ -294,13 +294,14 @@ master_legend_figure.update_layout(
 st.markdown("""
     <style>
         .title {
-            font-size: 40px;
+            font-size: 20px;
             font-weight: 700;
             text-align: center;
             color: #382626;
             margin-bottom: 20px;
         <style>
-    """)
+        """, unsafe_allow_html=True)
+
 
 with tab2:
     options = ['Global dataset', 'Brazilian subset']
@@ -312,7 +313,7 @@ with tab2:
     with col1:
         
 
-        st.write("Drought and Flash Drought Indicators")
+        st.markdown('<div class="title">Drought and Flash Drought Indicators </div>', unsafe_allow_html=True)
        
         if select_option=='Global dataset':
             st.plotly_chart(fig_a, use_container_width=True)
