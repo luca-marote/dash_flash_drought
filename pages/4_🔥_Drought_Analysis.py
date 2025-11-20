@@ -157,15 +157,14 @@ with tab1:
 PADRAO_LAYOUT = dict(
     showlegend=True,
     margin=dict(t=40, b=40, l=40, r=40),
-    width=600,  # Padronizado para o valor de fig_a
-    height=600
+    height=750
 )
 
 # 2. Configuração padrão de legenda (baseada em fig_a)
 PADRAO_LEGENDA = dict(
     title_text="Indicators",
     orientation="v",
-    y=0,  # Posição y de fig_a
+    y=-0.5,  # Posição y de fig_a
     x=0.5,   # Posição x de fig_a
     bordercolor="white",
     borderwidth=2,
