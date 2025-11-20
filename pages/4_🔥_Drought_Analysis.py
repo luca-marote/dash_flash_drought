@@ -167,8 +167,8 @@ PADRAO_LAYOUT = dict(
 PADRAO_LEGENDA = dict(
     title_text="Indicators",
     orientation="v",
-    xanchor="center", 
-    yanchor="top",
+    x=0.5, 
+    y=0,
     bordercolor="white",
     borderwidth=2,
     font=dict(
@@ -285,7 +285,7 @@ master_legend_figure = go.Figure(data=[
 master_legend_figure.update_layout(
     showlegend=True, 
     legend=PADRAO_LEGENDA,
-    height=120,      
+    height=200,      
     margin=dict(t=0, b=0, l=0, r=0),
     plot_bgcolor='rgba(0,0,0,0)',
     paper_bgcolor='rgba(0,0,0,0)'
