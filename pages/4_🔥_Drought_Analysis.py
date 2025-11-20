@@ -369,6 +369,14 @@ with tab2:
         )
         
 
-    
-    
-    
+    if options==['Global dataset indicators']:
+        st.plotly_chart(fig_a, use_container_width=True)
+
+    if options==['Flash drought indicators']:
+        st.plotly_chart(fig_b, use_container_width=True)
+                 
+    if options==['Brazilian drought indicators']:
+        st.plotly_chart(fig_c, use_container_width=True)
+
+    if options==['Brazilian drought indicators']:
+        st.plotly_chart(fig_d, use_container_width=True)
