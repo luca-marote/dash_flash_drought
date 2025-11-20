@@ -278,7 +278,7 @@ master_legend_figure = go.Figure(data=[
         labels=rotulos,
         marker=dict(colors=cores),
         hovertemplate="<extra></extra>",
-        domain={'x': [0, 0.0001], 'y': [0, 0.0001]}
+        domain={'x': [0, 0.00001], 'y': [0, 0.00001]}
     )
 ])
 
