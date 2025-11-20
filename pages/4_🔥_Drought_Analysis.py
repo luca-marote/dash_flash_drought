@@ -277,15 +277,15 @@ master_legend_figure = go.Figure(data=[
         values=valores_a, 
         labels=rotulos,
         marker=dict(colors=cores),
-        hovertemplate="<extra></extra>", 
-        visible=False 
+        hovertemplate="<extra></extra>",
+        domain={'x': [0, 0.0001], 'y': [0, 0.0001]}
     )
 ])
 
 master_legend_figure.update_layout(
     showlegend=True, 
     legend=PADRAO_LEGENDA,
-    height=80,      
+    height=120,      
     margin=dict(t=0, b=0, l=0, r=0),
     plot_bgcolor='rgba(0,0,0,0)',
     paper_bgcolor='rgba(0,0,0,0)'
