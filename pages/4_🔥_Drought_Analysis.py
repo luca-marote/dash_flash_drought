@@ -154,7 +154,7 @@ with tab1:
 
 
 
-PADRAO_LAYOUT_COMPLETO = dict(
+PADRAO_LAYOUT = dict(
     showlegend=True,
     # Remova width, e use apenas a altura desejada
     height=500,  # ⬅️ Reduza a altura se 1000px for muito alto para a coluna
