@@ -300,7 +300,7 @@ with tab2:
     
     with col1:
 
-        st.title("Drought and Flash Drought Indicators")
+       st.markdown("<h3 style='text-align: center; color: grey;'>Drought and Flash Drought Indicators</h3>", unsafe_allow_html=True)
        
         if select_option=='Global dataset':
             st.plotly_chart(fig_a, use_container_width=True)
@@ -311,7 +311,7 @@ with tab2:
 
     with col2:
 
-        st.title("Flash Drought Indicators")
+        st.markdown("<h3 style='text-align: center; color: grey;'>Flash Drought Indicators</h3>", unsafe_allow_html=True)
 
         if select_option=='Global dataset':
             st.plotly_chart(fig_b, use_container_width=True)
