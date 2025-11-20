@@ -286,47 +286,28 @@ fig_d.update_layout(**PADRAO_TEXTO)
 with tab2:
     col1, col2 = st.columns(2)
     
-    options = ['Global dataset indicators',
-               'Flash drought indicators',
-               'Brazilian drought indicators',
-               'Brazilian flash drought']
-    with col1:
-    
-        select_option = st.selectbox(
+    options = ['Global dataset',
+               'Brazilian subset']
+
+     select_option = st.selectbox(
             "Select option:",
             options=options, 
             index=0
             )
 
-        if select_option=='Global dataset indicators':
+    with col1:
+       
+        if select_option=='Global dataset':
             st.plotly_chart(fig_a, use_container_width=True)
-
-        elif select_option=='Flash drought indicators':
-            st.plotly_chart(fig_b, use_container_width=True)
                  
-        elif select_option=='Brazilian drought indicators':
+        elif select_option=='Brazilian subset':
             st.plotly_chart(fig_c, use_container_width=True)
-
-        elif select_option=='Brazilian flash drought':
-            st.plotly_chart(fig_d, use_container_width=True)
 
 
     with col2:
     
-        select_option = st.selectbox(
-            "Select option:",
-            options=options, 
-            index=0
-            )
-
-        if select_option=='Global dataset indicators':
-            st.plotly_chart(fig_a, use_container_width=True)
-
-        elif select_option=='Flash drought indicators':
+        if select_option=='Global dataset':
             st.plotly_chart(fig_b, use_container_width=True)
-                 
-        elif select_option=='Brazilian drought indicators':
-            st.plotly_chart(fig_c, use_container_width=True)
 
-        elif select_option=='Brazilian flash drought':
+        elif select_option=='Brazilian subset':
             st.plotly_chart(fig_d, use_container_width=True)
