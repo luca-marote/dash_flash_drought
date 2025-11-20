@@ -155,7 +155,7 @@ with tab1:
 
 
 PADRAO_LAYOUT = dict(
-    show_legend=False
+    showlegend=False
     margin=dict(t=40, b=40, l=40, r=40),
     height=1500
     width
@@ -207,7 +207,7 @@ fig_a = go.Figure(data=[
 ])
     
 fig_a.update_layout(**PADRAO_LAYOUT)
-fig_a.update_layout(legend=PADRAO_LEGENDA)
+#fig_a.update_layout(legend=PADRAO_LEGENDA)
 fig_a.update_layout(**PADRAO_TEXTO) 
 
 valores_b = [46, 40, 20, 19, 9, 0]
@@ -231,7 +231,7 @@ fig_b = go.Figure(data=[
 ])
     
 fig_b.update_layout(**PADRAO_LAYOUT)
-fig_b.update_layout(legend=PADRAO_LEGENDA)
+#fig_b.update_layout(legend=PADRAO_LEGENDA)
 fig_b.update_layout(**PADRAO_TEXTO) 
 
 valores_c = [23, 8, 15, 11, 3, 0]
@@ -255,7 +255,7 @@ fig_c = go.Figure(data=[
 ])
 
 fig_c.update_layout(**PADRAO_LAYOUT)
-fig_c.update_layout(legend=PADRAO_LEGENDA)
+#fig_c.update_layout(legend=PADRAO_LEGENDA)
 fig_c.update_layout(**PADRAO_TEXTO) 
 
 valores_d = [4, 3, 2, 0, 0, 0]
