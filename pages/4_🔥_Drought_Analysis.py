@@ -332,6 +332,6 @@ with tab2:
         elif select_option=='Brazilian subset':
             st.plotly_chart(fig_d, use_container_width=True)
 
-        st.plotly_chart(master_legend_figure, use_container_width=True)
+    st.plotly_chart(master_legend_figure, use_container_width=True)
             
        
