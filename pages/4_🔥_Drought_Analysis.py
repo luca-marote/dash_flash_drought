@@ -274,7 +274,7 @@ fig_d.update_layout(**PADRAO_LAYOUT)
 
 master_legend_figure = go.Figure(data=[
     go.Pie(
-        values=valores_a, 
+        values=valores_d, 
         labels=rotulos,
         marker=dict(colors=cores),
         hovertemplate="<extra></extra>",
