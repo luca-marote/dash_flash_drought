@@ -23,7 +23,14 @@ st.sidebar.image(hsj_logo, use_column_width=True)
 # Estilo CSS personalizado
 st.markdown("""
     <style>
-        .title {
+        .title1 {
+            font-size: 70px;
+            font-weight: 700;
+            text-align: center;
+            color: #382626;
+            margin-bottom: 20px;
+        }
+        .title2 {
             font-size: 40px;
             font-weight: 700;
             text-align: center;
@@ -59,10 +66,10 @@ st.markdown("""
 
 
 st.markdown(
-    '<div class="title">SIRAS-Brazil</div>', unsafe_allow_html=True)
+    '<div class="title1">SIRAS-Brazil</div>', unsafe_allow_html=True)
 
 st.markdown(
-    '<div class="title">System for the Interactive Review and Analysis of Flash Droughts in Brazil</div>', unsafe_allow_html=True)
+    '<div class="title2">System for the Interactive Review and Analysis of Flash Droughts in Brazil</div>', unsafe_allow_html=True)
 
 st.markdown(
     """ <div style="text-align:center; font-size:18px; line-height:1.6; margin-top:15px;
@@ -157,6 +164,7 @@ st.markdown('<div class="legend"> Comparison between slow-onset (a) and flash (b
 st.image("images/figure1.png")
         
     
+
 
 
 
