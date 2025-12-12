@@ -9,7 +9,7 @@ import streamlit as st
 import streamlit.components.v1 as components
 
 st.set_page_config(
-    page_title="Flash Droughts in Brazil",
+    page_title="SIRAS-Brazil",
     layout="wide",
      )
 
@@ -164,6 +164,7 @@ st.markdown('<div class="legend"> Comparison between slow-onset (a) and flash (b
 st.image("images/figure1.png")
         
     
+
 
 
 
