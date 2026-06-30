@@ -13,7 +13,7 @@ st.set_page_config(
     layout="wide",
      )
 
-hsj_logo = 'https://www.tandfonline.com/cms/asset/3e7614cf-7643-4a3d-9bad-f444bd55e5c7/thsj20.v070.i14.cover.jpg'
+hsj_logo = 'https://www.tandfonline.com/action/showCoverImage?doi=10.1080/thsj20.v071.i08'
 t_f_logo = 'https://www.informascope.com/views/default/_images/_logos/urunler/taylor_and_francis.png'
 
 st.sidebar.image(t_f_logo, use_column_width=True)
@@ -95,7 +95,7 @@ st.markdown("""
   <div style="text-align:center;">
     <div style="font-size:20px;"><sup>a</sup></div>
     <a href="https://www.ft.unicamp.br/" target="_blank" rel="noopener noreferrer">
-      <img src="https://upload.wikimedia.org/wikipedia/pt/thumb/b/b2/UNICAMP_logo.svg/966px-UNICAMP_logo.svg.png" style="height:100px; display:block; margin:4px auto;">
+      <img src="https://www.unicamp.br/wp-content/uploads/sites/33/2023/07/Logo_Unicamp__0.jpg" style="height:100px; display:block; margin:4px auto;">
     </a>
   </div>
 
@@ -130,7 +130,7 @@ st.markdown("""
   <div style="text-align:center;">
     <div style="font-size:20px;"><sup>f</sup></div>
     <a href="https://engineering.tamu.edu/civil/index.html" target="_blank" rel="noopener noreferrer">
-      <img src="https://upload.wikimedia.org/wikipedia/en/thumb/f/f7/Texas_A%26M_University_seal.svg/1200px-Texas_A%26M_University_seal.svg.png" style="height:100px; display:block; margin:4px auto;">
+      <img src="https://www.tamu.edu/_files/images/logos/primaryTAM.png" style="height:100px; display:block; margin:4px auto;">
     </a>
   </div>
 
