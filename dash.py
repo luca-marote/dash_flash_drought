@@ -130,7 +130,7 @@ st.markdown("""
   <div style="text-align:center;">
     <div style="font-size:20px;"><sup>f</sup></div>
     <a href="https://engineering.tamu.edu/civil/index.html" target="_blank" rel="noopener noreferrer">
-      <img src="https://d26fti783qamsb.cloudfront.net/wp-content/uploads/2024/05/19171707/TAM-MaroonBox-1.png" style="height:100px; display:block; margin:4px auto;">
+      <img src="https://d26fti783qamsb.cloudfront.net/wp-content/uploads/2024/05/19171652/TAM-White-2.png" style="height:100px; display:block; margin:4px auto;">
     </a>
   </div>
 
